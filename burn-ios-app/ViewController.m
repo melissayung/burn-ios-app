@@ -11,6 +11,8 @@
 #import "MealAlbumView.h"
 #import "LibraryAPI.h"
 #import "Meal+TableRepresentation.h"
+#import "PhotoGalleryViewController.h"
+#import "StoryboardUtil.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate, HorizontalScrollerDelegate> {
     
@@ -96,7 +98,8 @@
 }
 
 - (void)nextButtonPressed:(id)sender {
-    NSLog(0);
+    PhotoGalleryViewController *viewCon = (PhotoGalleryViewController*)[StoryboardUtil loadViewControllerWithID:@"PhotoGallery"];
+    [self.navigationController pushViewController:viewCon animated:YES];
 }
 
 - (void)showDataForMealAtIndex:(int)mealIndex

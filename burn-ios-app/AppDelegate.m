@@ -19,10 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-//    UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:[StoryboardUtil loadViewControllerWithID:@"TourView"]];
-//    self.window.rootViewController = navCon;
-//    [self.window makeKeyAndVisible];
+    if([[EyeEmNetworkService sharedInstance]isAuthenticated]) {
+        [self showFoodControllerView];
+    }
     return YES;
 }
 							
@@ -53,6 +52,12 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)showFoodControllerView {
+    ViewController *viewCon = [[ViewController alloc]init];
+    UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:viewCon];
+    self.window.rootViewController = navCon;
+}
+
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     if([[url absoluteString]rangeOfString:@"burnapp://eyeem_auth"].location != NSNotFound) {
         NSString *codeParam = @"code=";
@@ -64,10 +69,7 @@
             NSString *apiCode = [urlStr substringWithRange:NSMakeRange(location, [urlStr length]-location)];
             [EyeEmNetworkService sharedInstance].apiCode = apiCode;
             [[EyeEmNetworkService sharedInstance]requestAccessTokenWithCompletion:^{
-                
-                ViewController *viewCon = [[ViewController alloc]init];
-//                UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:viewCon];
-                self.window.rootViewController = viewCon;
+                [self showFoodControllerView];
             } error:^(NSString *errorMsg) {
                 NSLog(0);
             }];

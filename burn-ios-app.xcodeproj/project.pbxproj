@@ -32,6 +32,8 @@
 		083293AE1809CD7D0012C3A5 /* photo_4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 083293AD1809CD7D0012C3A5 /* photo_4.jpeg */; };
 		083293B01809CE6E0012C3A5 /* eyeem_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 083293AF1809CE6E0012C3A5 /* eyeem_logo.png */; };
 		083293B31809CF880012C3A5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 083293B21809CF880012C3A5 /* LoginViewController.m */; };
+		083293BA1809D3750012C3A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 083293B91809D3750012C3A5 /* Images.xcassets */; };
+		083293BD1809D60C0012C3A5 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 083293BC1809D60C0012C3A5 /* PhotoViewController.m */; };
 		08F991361809733A00F0B13A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991351809733A00F0B13A /* Foundation.framework */; };
 		08F991381809733A00F0B13A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991371809733A00F0B13A /* CoreGraphics.framework */; };
 		08F9913A1809733A00F0B13A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991391809733A00F0B13A /* UIKit.framework */; };
@@ -116,6 +118,9 @@
 		083293AF1809CE6E0012C3A5 /* eyeem_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeem_logo.png; sourceTree = "<group>"; };
 		083293B11809CF880012C3A5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		083293B21809CF880012C3A5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		083293B91809D3750012C3A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		083293BB1809D60C0012C3A5 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		083293BC1809D60C0012C3A5 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		08F991321809733A00F0B13A /* burn-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "burn-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F991351809733A00F0B13A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08F991371809733A00F0B13A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -259,6 +264,7 @@
 		08F9913B1809733A00F0B13A /* burn-ios-app */ = {
 			isa = PBXGroup;
 			children = (
+				083293B91809D3750012C3A5 /* Images.xcassets */,
 				083293A61809CBCC0012C3A5 /* Images */,
 				083293831809BD1B0012C3A5 /* AFNetworking */,
 				083293821809BCC20012C3A5 /* JTSingleton.h */,
@@ -304,6 +310,8 @@
 				083293A41809CA4E0012C3A5 /* TourViewController.m */,
 				083293B11809CF880012C3A5 /* LoginViewController.h */,
 				083293B21809CF880012C3A5 /* LoginViewController.m */,
+				083293BB1809D60C0012C3A5 /* PhotoViewController.h */,
+				083293BC1809D60C0012C3A5 /* PhotoViewController.m */,
 			);
 			path = "burn-ios-app";
 			sourceTree = "<group>";
@@ -433,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70F4702E1809BB54003B507C /* sandwich.jpg in Resources */,
+				083293BA1809D3750012C3A5 /* Images.xcassets in Resources */,
 				70F4702D1809BB54003B507C /* pizzaSlice.jpg in Resources */,
 				083293AA1809CBD80012C3A5 /* photo_1.jpeg in Resources */,
 				70F470251809BB54003B507C /* InfoPlist.strings in Resources */,
@@ -511,6 +520,7 @@
 				70F470291809BB54003B507C /* Meal.m in Sources */,
 				0832939F1809BD1B0012C3A5 /* AFPropertyListRequestOperation.m in Sources */,
 				08329324180992C90012C3A5 /* PhotoGalleryViewController.m in Sources */,
+				083293BD1809D60C0012C3A5 /* PhotoViewController.m in Sources */,
 				083293A21809BD1B0012C3A5 /* UIImageView+AFNetworking.m in Sources */,
 				0832939B1809BD1B0012C3A5 /* AFImageRequestOperation.m in Sources */,
 				70F470321809BBB4003B507C /* Meal+TableRepresentation.m in Sources */,

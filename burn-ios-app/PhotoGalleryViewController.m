@@ -7,6 +7,10 @@
 //
 
 #import "PhotoGalleryViewController.h"
+#import "PhotoViewController.h"
+#import "StoryboardUtil.h"
+#import "LoadingView.h"
+#import "EyeEmNetworkService.h"
 
 @interface PhotoGalleryViewController ()
 
@@ -29,6 +33,20 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [LoadingView show];
+    [[EyeEmNetworkService sharedInstance]fetchPhotosHavingCoordinates:CLLocationCoordinate2DMake(0, 0) completion:^(NSArray *photos) {
+        [LoadingView hide];
+        
+        PhotoGalleryViewController *viewCon = (PhotoGalleryViewController*)[StoryboardUtil loadViewControllerWithID:@"PhotoGallery"];
+        viewCon.photos = photos;
+        
+    } error:^(NSString *errorMsg) {
+        NSLog(0);
+    }];
+}
+
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     return [self.photos count];
 }
@@ -48,10 +66,10 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    PhotoViewController *viewCon = (PhotoViewController*)[StoryboardUtil
-//                                                          loadViewControllerWithID:@"PhotoViewController"];
-//    viewCon.imgURL = [self.imageURLs objectAtIndex:indexPath.row];
-//    [self.navigationController pushViewController:viewCon animated:YES];
+    PhotoViewController *viewCon = (PhotoViewController*)[StoryboardUtil
+                                                          loadViewControllerWithID:@"PhotoViewController"];
+    viewCon.photo = [self.photos objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:viewCon animated:YES];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {

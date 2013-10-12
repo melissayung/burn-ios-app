@@ -16,8 +16,10 @@
 @property (nonatomic, strong) NSString *apiCode;
 @property (nonatomic, strong) NSString *accessToken;
 
+- (void)fetchPhotoDetailsWithID:(NSString*)photoID completion:(void (^)(Photo *photo))completionBlock error:(void (^)(NSString *errorMsg))errorBlock;
 - (void)fetchPhotosHavingCoordinates:(CLLocationCoordinate2D)coordinates completion:(void (^)(NSArray *photos))completionBlock error:(void (^)(NSString *errorMsg))errorBlock;
-
 - (void)requestAccessTokenWithCompletion:(void (^)(void))completionBlock error:(void (^)(NSString *errorMsg))errorBlock;
+                                                               
 - (void)authenticate;
+- (BOOL)isAuthenticated;
 @end

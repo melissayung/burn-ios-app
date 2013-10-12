@@ -13,6 +13,9 @@
 #define kClientID @"Sb2PFEeTnV2sb6vtAzoubLXqEz0imxuo"
 #define kClientSecret @"6UYKGWJCJSqcQ2TVkbh5dcM4FJj3xY1R"
 
+#define kAccessTokenKey @"BURN_APP_ACCESS_TOKEN"
+#define kAPIKey @"BURN_APP_KEY"
+
 @interface EyeEmNetworkService()
 @property (nonatomic, strong) AFHTTPClient *httpClient;
 @end
@@ -23,9 +26,34 @@ JTSYNTHESIZE_SINGLETON_FOR_CLASS(EyeEmNetworkService)
 
 - (id)init {
     if(self = [super init]) {
+        
         self.httpClient = [[AFHTTPClient alloc]initWithBaseURL:[NSURL URLWithString:kBaseURL]];
+        self.accessToken = [[NSUserDefaults standardUserDefaults]objectForKey:kAccessTokenKey];
+        self.apiCode = [[NSUserDefaults standardUserDefaults]objectForKey:kAPIKey];
     }
     return self;
+}
+
+- (BOOL)isAuthenticated {
+    return self.accessToken && self.apiCode;
+}
+
+- (void)setApiCode:(NSString *)apiCode {
+    _apiCode = apiCode;
+    [[NSUserDefaults standardUserDefaults]setObject:_apiCode forKey:kAPIKey];
+}
+
+    ///v2/photos/939584
+- (void)fetchPhotoDetailsWithID:(NSString*)photoID completion:(void (^)(Photo *photo))completionBlock error:(void (^)(NSString *errorMsg))errorBlock {
+
+    NSURLRequest *request = [self.httpClient requestWithMethod:@"GET" path:[NSString stringWithFormat:@"v2/photos/%@", photoID] parameters:nil];
+    AFJSONRequestOperation *op = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        // TODO get details
+        completionBlock(nil);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        errorBlock(nil);
+    }];
+    [self.httpClient enqueueHTTPRequestOperation:op];
 }
 
 /**
@@ -74,6 +102,8 @@ https://www.eyeem.com/api/v2/albums?geoSearch=nearbyVenues&lat=52.50094140368&ln
         
         // TODO keep track of expiry?
         self.accessToken = [JSON objectForKey:@"access_token"];
+        [[NSUserDefaults standardUserDefaults]setObject:self.accessToken forKey:kAccessTokenKey];
+        
         completionBlock();
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         errorBlock(nil);
