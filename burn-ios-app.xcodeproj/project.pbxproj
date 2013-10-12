@@ -13,7 +13,7 @@
 		08F991401809733A00F0B13A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08F9913E1809733A00F0B13A /* InfoPlist.strings */; };
 		08F991421809733A00F0B13A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F991411809733A00F0B13A /* main.m */; };
 		08F991461809733A00F0B13A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F991451809733A00F0B13A /* AppDelegate.m */; };
-		08F991491809733A00F0B13A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08F991471809733A00F0B13A /* Main.storyboard */; };
+		08F991491809733A00F0B13A /* Main_.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08F991471809733A00F0B13A /* Main_.storyboard */; };
 		08F9914C1809733A00F0B13A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F9914B1809733A00F0B13A /* ViewController.m */; };
 		08F9914E1809733A00F0B13A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F9914D1809733A00F0B13A /* Images.xcassets */; };
 		08F991551809733B00F0B13A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991541809733B00F0B13A /* XCTest.framework */; };
@@ -21,6 +21,17 @@
 		08F991571809733B00F0B13A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991391809733A00F0B13A /* UIKit.framework */; };
 		08F9915F1809733B00F0B13A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08F9915D1809733B00F0B13A /* InfoPlist.strings */; };
 		08F991611809733B00F0B13A /* burn_ios_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F991601809733B00F0B13A /* burn_ios_appTests.m */; };
+		70F46F9E18097999003B507C /* sandwich.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F46F9D18097999003B507C /* sandwich.jpg */; };
+		70F46FA2180979A3003B507C /* pizzaSlice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F46F9F180979A3003B507C /* pizzaSlice.jpg */; };
+		70F46FA3180979A3003B507C /* caesarSalad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F46FA0180979A3003B507C /* caesarSalad.jpg */; };
+		70F46FA4180979A3003B507C /* soup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F46FA1180979A3003B507C /* soup.jpg */; };
+		70F46FA7180980BB003B507C /* HorizontalScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F46FA6180980BB003B507C /* HorizontalScroller.m */; };
+		70F46FAA18098BBD003B507C /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F46FA918098BBD003B507C /* Meal.m */; };
+		70F46FAD18098CB2003B507C /* MealAlbumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F46FAC18098CB2003B507C /* MealAlbumView.m */; };
+		70F46FB51809900A003B507C /* LibraryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F46FB41809900A003B507C /* LibraryAPI.m */; };
+		70F46FB81809903F003B507C /* PersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F46FB71809903F003B507C /* PersistencyManager.m */; };
+		70F46FBB180996E2003B507C /* Meal+TableRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F46FBA180996E2003B507C /* Meal+TableRepresentation.m */; };
+		70F46FBD1809A358003B507C /* pasta.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 70F46FBC1809A358003B507C /* pasta.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +55,7 @@
 		08F991431809733A00F0B13A /* burn-ios-app-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "burn-ios-app-Prefix.pch"; sourceTree = "<group>"; };
 		08F991441809733A00F0B13A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		08F991451809733A00F0B13A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		08F991481809733A00F0B13A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		08F991481809733A00F0B13A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_.storyboard; sourceTree = "<group>"; };
 		08F9914A1809733A00F0B13A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		08F9914B1809733A00F0B13A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		08F9914D1809733A00F0B13A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -53,6 +64,23 @@
 		08F9915C1809733B00F0B13A /* burn-ios-appTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "burn-ios-appTests-Info.plist"; sourceTree = "<group>"; };
 		08F9915E1809733B00F0B13A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08F991601809733B00F0B13A /* burn_ios_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = burn_ios_appTests.m; sourceTree = "<group>"; };
+		70F46F9D18097999003B507C /* sandwich.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sandwich.jpg; sourceTree = "<group>"; };
+		70F46F9F180979A3003B507C /* pizzaSlice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizzaSlice.jpg; sourceTree = "<group>"; };
+		70F46FA0180979A3003B507C /* caesarSalad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = caesarSalad.jpg; sourceTree = "<group>"; };
+		70F46FA1180979A3003B507C /* soup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soup.jpg; sourceTree = "<group>"; };
+		70F46FA5180980BB003B507C /* HorizontalScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalScroller.h; sourceTree = "<group>"; };
+		70F46FA6180980BB003B507C /* HorizontalScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalScroller.m; sourceTree = "<group>"; };
+		70F46FA818098BBD003B507C /* Meal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meal.h; sourceTree = "<group>"; };
+		70F46FA918098BBD003B507C /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
+		70F46FAB18098CB2003B507C /* MealAlbumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealAlbumView.h; sourceTree = "<group>"; };
+		70F46FAC18098CB2003B507C /* MealAlbumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealAlbumView.m; sourceTree = "<group>"; };
+		70F46FB31809900A003B507C /* LibraryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryAPI.h; sourceTree = "<group>"; };
+		70F46FB41809900A003B507C /* LibraryAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryAPI.m; sourceTree = "<group>"; };
+		70F46FB61809903F003B507C /* PersistencyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistencyManager.h; sourceTree = "<group>"; };
+		70F46FB71809903F003B507C /* PersistencyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistencyManager.m; sourceTree = "<group>"; };
+		70F46FB9180996E2003B507C /* Meal+TableRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Meal+TableRepresentation.h"; sourceTree = "<group>"; };
+		70F46FBA180996E2003B507C /* Meal+TableRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Meal+TableRepresentation.m"; sourceTree = "<group>"; };
+		70F46FBC1809A358003B507C /* pasta.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pasta.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +110,8 @@
 		08F991291809733A00F0B13A = {
 			isa = PBXGroup;
 			children = (
+				70F46FB9180996E2003B507C /* Meal+TableRepresentation.h */,
+				70F46FBA180996E2003B507C /* Meal+TableRepresentation.m */,
 				08F9913B1809733A00F0B13A /* burn-ios-app */,
 				08F9915A1809733B00F0B13A /* burn-ios-appTests */,
 				08F991341809733A00F0B13A /* Frameworks */,
@@ -112,11 +142,15 @@
 		08F9913B1809733A00F0B13A /* burn-ios-app */ = {
 			isa = PBXGroup;
 			children = (
+				70F46FB218098FBD003B507C /* API */,
+				70F46FB118098F24003B507C /* Controller */,
+				70F46FB018098F19003B507C /* View */,
 				08F991441809733A00F0B13A /* AppDelegate.h */,
 				08F991451809733A00F0B13A /* AppDelegate.m */,
-				08F991471809733A00F0B13A /* Main.storyboard */,
-				08F9914A1809733A00F0B13A /* ViewController.h */,
-				08F9914B1809733A00F0B13A /* ViewController.m */,
+				08F991471809733A00F0B13A /* Main_.storyboard */,
+				70F46FAE18098F05003B507C /* Model */,
+				70F46FA5180980BB003B507C /* HorizontalScroller.h */,
+				70F46FA6180980BB003B507C /* HorizontalScroller.m */,
 				08F9914D1809733A00F0B13A /* Images.xcassets */,
 				08F9913C1809733A00F0B13A /* Supporting Files */,
 			);
@@ -126,6 +160,11 @@
 		08F9913C1809733A00F0B13A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70F46FBC1809A358003B507C /* pasta.jpeg */,
+				70F46F9F180979A3003B507C /* pizzaSlice.jpg */,
+				70F46FA0180979A3003B507C /* caesarSalad.jpg */,
+				70F46FA1180979A3003B507C /* soup.jpg */,
+				70F46F9D18097999003B507C /* sandwich.jpg */,
 				08F9913D1809733A00F0B13A /* burn-ios-app-Info.plist */,
 				08F9913E1809733A00F0B13A /* InfoPlist.strings */,
 				08F991411809733A00F0B13A /* main.m */,
@@ -150,6 +189,44 @@
 				08F9915D1809733B00F0B13A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70F46FAE18098F05003B507C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				70F46FA918098BBD003B507C /* Meal.m */,
+				70F46FA818098BBD003B507C /* Meal.h */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		70F46FB018098F19003B507C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				70F46FAC18098CB2003B507C /* MealAlbumView.m */,
+				70F46FAB18098CB2003B507C /* MealAlbumView.h */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		70F46FB118098F24003B507C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				08F9914A1809733A00F0B13A /* ViewController.h */,
+				08F9914B1809733A00F0B13A /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		70F46FB218098FBD003B507C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				70F46FB31809900A003B507C /* LibraryAPI.h */,
+				70F46FB41809900A003B507C /* LibraryAPI.m */,
+				70F46FB61809903F003B507C /* PersistencyManager.h */,
+				70F46FB71809903F003B507C /* PersistencyManager.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,9 +305,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F46FA2180979A3003B507C /* pizzaSlice.jpg in Resources */,
+				70F46FA4180979A3003B507C /* soup.jpg in Resources */,
+				70F46F9E18097999003B507C /* sandwich.jpg in Resources */,
+				70F46FA3180979A3003B507C /* caesarSalad.jpg in Resources */,
 				08F9914E1809733A00F0B13A /* Images.xcassets in Resources */,
 				08F991401809733A00F0B13A /* InfoPlist.strings in Resources */,
-				08F991491809733A00F0B13A /* Main.storyboard in Resources */,
+				08F991491809733A00F0B13A /* Main_.storyboard in Resources */,
+				70F46FBD1809A358003B507C /* pasta.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +331,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F46FAA18098BBD003B507C /* Meal.m in Sources */,
 				08F9914C1809733A00F0B13A /* ViewController.m in Sources */,
 				08F991461809733A00F0B13A /* AppDelegate.m in Sources */,
+				70F46FB81809903F003B507C /* PersistencyManager.m in Sources */,
+				70F46FB51809900A003B507C /* LibraryAPI.m in Sources */,
 				08F991421809733A00F0B13A /* main.m in Sources */,
+				70F46FBB180996E2003B507C /* Meal+TableRepresentation.m in Sources */,
+				70F46FAD18098CB2003B507C /* MealAlbumView.m in Sources */,
+				70F46FA7180980BB003B507C /* HorizontalScroller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,12 +370,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		08F991471809733A00F0B13A /* Main.storyboard */ = {
+		08F991471809733A00F0B13A /* Main_.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				08F991481809733A00F0B13A /* Base */,
 			);
-			name = Main.storyboard;
+			name = Main_.storyboard;
 			sourceTree = "<group>";
 		};
 		08F9915D1809733B00F0B13A /* InfoPlist.strings */ = {
@@ -460,6 +548,7 @@
 				08F991661809733B00F0B13A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		08F991671809733B00F0B13A /* Build configuration list for PBXNativeTarget "burn-ios-appTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +557,7 @@
 				08F991691809733B00F0B13A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

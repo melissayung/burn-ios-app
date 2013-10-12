@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>418426DF-78B0-4C81-B56B-A627DEEFD9B6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>burn-ios-app</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BDDCC273-3670-496E-B97E-75408FB9FB07</key>
+		<string>https://github.com/anitasantoso/burn-ios-app.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>burn-ios-app.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BDDCC273-3670-496E-B97E-75408FB9FB07</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/anitasantoso/burn-ios-app.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BDDCC273-3670-496E-B97E-75408FB9FB07</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BDDCC273-3670-496E-B97E-75408FB9FB07</string>
+			<key>IDESourceControlWCCName</key>
+			<string>burn-ios-app</string>
+		</dict>
+	</array>
+</dict>
+</plist>
