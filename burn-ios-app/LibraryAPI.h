@@ -12,8 +12,18 @@
 @interface LibraryAPI : NSObject
 
 + (LibraryAPI*)sharedInstance;
-- (NSArray*)getMeals;
-- (void)addMeal:(Meal*)meal atIndex:(int)index;
-- (void)deleteMealAtIndex:(int)index;
+- (NSArray*)getMains;
+- (void)addMain:(Meal*)main atIndex:(int)index;
+- (void)deleteMainAtIndex:(int)index;
+
+
+- (NSArray*)getDrinks;
+- (void)addDrink:(Meal*)drink atIndex:(int)index;
+- (void)deleteDrinkAtIndex:(int)index;
+
+
+- (NSArray*)getDesserts;
+- (void)addDessert:(Meal*)dessert atIndex:(int)index;
+- (void)deleteDessertAtIndex:(int)index;
 
 @end

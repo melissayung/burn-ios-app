@@ -10,6 +10,6 @@
 
 @interface MealAlbumView : UIView
 
--(id)initWithFrame:(CGRect)frame mealImage:(NSString*)mealImage;
+-(id)initWithFrame:(CGRect)frame mealImage:(NSString*)mealImage highlightedMealImage:(NSString*)highlightedMealImage;
 
 @end

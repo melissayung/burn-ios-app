@@ -10,8 +10,9 @@
 
 @interface Meal : NSObject
 
-@property (nonatomic, copy, readonly) NSString *label, *imagePath;
+@property (nonatomic, copy, readonly) NSString *label, *imagePath, *highlightedImagePath;
+@property (nonatomic, readonly) int calories;
 
-- (id)initWithLabel:(NSString*)label imagePath:(NSString*)image;
+- (id)initWithLabel:(NSString*)label imagePath:(NSString*)image highlightedImagePath:(NSString*)highlightedImage calories:(int)cals;
 
 @end

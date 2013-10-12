@@ -14,7 +14,7 @@
     UIActivityIndicatorView *indicator;
 }
 
-- (id)initWithFrame:(CGRect)frame mealImage:(NSString*)mealImage
+- (id)initWithFrame:(CGRect)frame mealImage:(NSString*)mealImage highlightedMealImage:(NSString*)highlightedMealImage
 {
     self = [super initWithFrame:frame];
     if (self)
@@ -35,7 +35,7 @@
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"BLDownloadImageNotification"
                                                             object:self
-                                                          userInfo:@{@"imageView":coverImage, @"imagePath":mealImage}];
+                                                          userInfo:@{@"imageView":coverImage, @"imagePath":mealImage, @"highlightedImagePath":highlightedMealImage}];
     }
     return self;
 }

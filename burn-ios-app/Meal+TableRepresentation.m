@@ -9,9 +9,21 @@
 #import "Meal+TableRepresentation.h"
 
 @implementation Meal (TableRepresentation)
-- (NSDictionary*)tr_tableRepresentation
+- (NSDictionary*)tr_mainTableRepresentation
 {
-    return @{@"titles":@[@"Meal"],
+    return @{@"titles":@[@"Main"],
+             @"values":@[self.label]};
+}
+
+- (NSDictionary*)tr_drinkTableRepresentation
+{
+    return @{@"titles":@[@"Drink"],
+             @"values":@[self.label]};
+}
+
+- (NSDictionary*)tr_dessertTableRepresentation
+{
+    return @{@"titles":@[@"Treat"],
              @"values":@[self.label]};
 }
 @end

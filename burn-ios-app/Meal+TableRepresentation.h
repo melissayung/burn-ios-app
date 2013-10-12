@@ -9,5 +9,7 @@
 #import "Meal.h"
 
 @interface Meal (TableRepresentation)
-- (NSDictionary*)tr_tableRepresentation;
+- (NSDictionary*)tr_mainTableRepresentation;
+- (NSDictionary*)tr_drinkTableRepresentation;
+- (NSDictionary*)tr_dessertTableRepresentation;
 @end

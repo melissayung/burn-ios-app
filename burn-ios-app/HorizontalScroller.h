@@ -28,6 +28,9 @@
 // inform the delegate what the view at <index> has been clicked
 - (void)horizontalScroller:(HorizontalScroller*)scroller clickedViewAtIndex:(int)index;
 
+// inform the delegate what the view at <index> has been selected
+- (void)horizontalScroller:(HorizontalScroller*)scroller selectedViewAtIndex:(int)index;
+
 @optional
 // ask the delegate for the index of the initial view to display. this method is optional
 // and defaults to 0 if it's not implemented by the delegate

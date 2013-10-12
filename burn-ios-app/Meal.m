@@ -9,13 +9,15 @@
 #import "Meal.h"
 
 @implementation Meal
-- (id)initWithLabel:(NSString*)label imagePath:(NSString*)image
+- (id)initWithLabel:(NSString*)label imagePath:(NSString*)image highlightedImagePath:(NSString *)highlightedImage calories:(int)cals
 {
     self = [super init];
     if (self)
     {
         _label = label;
         _imagePath = image;
+        _highlightedImagePath = highlightedImage;
+        _calories = cals;
     }
     return self;
 }

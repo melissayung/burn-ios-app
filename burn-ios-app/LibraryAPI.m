@@ -56,8 +56,12 @@
     UIImageView *imageView = notification.userInfo[@"imageView"];
     NSString *imagePath = notification.userInfo[@"imagePath"];
     
+    UIImageView *highlightedImageView = notification.userInfo[@"highlightedImageView"];
+    NSString *highlightedImagePath = notification.userInfo[@"highlightedImagePath"];
+    
     // 2
     imageView.image = [persistencyManager getImage:[imagePath lastPathComponent]];
+    highlightedImageView.image = [persistencyManager getImage:[highlightedImagePath lastPathComponent]];
     
     if (imageView.image == nil)
     {
@@ -73,24 +77,41 @@
                 [persistencyManager saveImage:image filename:[imagePath lastPathComponent]];
             });
         });
-    }    
+    }
+   
+    if (highlightedImageView.image == nil)
+    {
+    	// 3
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            UIImage *highligtedImage = [UIImage imageNamed:highlightedImagePath];
+            //[httpClient downloadImage:coverUrl];
+            
+            // 4
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                highlightedImageView.image = highligtedImage;
+                [persistencyManager saveImage:highligtedImage filename:[highlightedImagePath lastPathComponent]];
+            });
+        });
+    }
+
 }
 
-- (NSArray*)getMeals
+- (NSArray*)getMains
 {
-    return [persistencyManager getMeals];
+    return [persistencyManager getMains];
 }
 
-- (void)addMeal:(Meal*)meal atIndex:(int)index
+- (void)addMain:(Meal*)main atIndex:(int)index
 {
-    [persistencyManager addMeal:meal atIndex:index];
+    [persistencyManager addMeal:main atIndex:index];
     if (isOnline)
     {
         //[httpClient postRequest:@"/api/addAlbum" body:[album description]];
     }
 }
 
-- (void)deleteMealAtIndex:(int)index
+- (void)deleteMainAtIndex:(int)index
 {
     [persistencyManager deleteMealAtIndex:index];
     if (isOnline)
@@ -98,5 +119,53 @@
         //[httpClient postRequest:@"/api/deleteAlbum" body:[@(index) description]];
     }
 }
+
+- (NSArray*)getDrinks
+{
+    return [persistencyManager getDrinks];
+}
+
+- (void)addDrink:(Meal*)drink atIndex:(int)index
+{
+    [persistencyManager addDrink:drink atIndex:index];
+    if (isOnline)
+    {
+        //[httpClient postRequest:@"/api/addAlbum" body:[album description]];
+    }
+}
+
+- (void)deleteDrinkAtIndex:(int)index
+{
+    [persistencyManager deleteDrinkAtIndex:index];
+    if (isOnline)
+    {
+        //[httpClient postRequest:@"/api/deleteAlbum" body:[@(index) description]];
+    }
+}
+
+
+- (NSArray*)getDesserts
+{
+    return [persistencyManager getDesserts];
+}
+
+- (void)addDessert:(Meal*)dessert atIndex:(int)index
+{
+    [persistencyManager addDessert:dessert atIndex:index];
+    if (isOnline)
+    {
+        //[httpClient postRequest:@"/api/addAlbum" body:[album description]];
+    }
+}
+
+- (void)deleteDessertAtIndex:(int)index
+{
+    [persistencyManager deleteDessertAtIndex:index];
+    if (isOnline)
+    {
+        //[httpClient postRequest:@"/api/deleteAlbum" body:[@(index) description]];
+    }
+}
+
 
 @end

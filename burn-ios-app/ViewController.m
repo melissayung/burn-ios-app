@@ -16,11 +16,27 @@
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate, HorizontalScrollerDelegate> {
     
-    UITableView *dataTable;
-    NSArray *allMeals;
-    NSDictionary *currentMealData;
-    int currentMealIndex;
-    HorizontalScroller *scroller;
+    UITableView *mainsDataTable;
+    NSArray *allMains;
+    NSDictionary *currentMainData;
+    int currentMainIndex;
+    HorizontalScroller *mainScroller;
+    
+    UITableView *drinksDataTable;
+    NSArray *allDrinks;
+    NSDictionary *currentDrinkData;
+    int currentDrinkIndex;
+    HorizontalScroller *drinksScroller;
+    
+    
+    UITableView *dessertsDataTable;
+    NSArray *allDesserts;
+    NSDictionary *currentDessertData;
+    int currentDessertIndex;
+    HorizontalScroller *dessertsScroller;
+    
+    
+    int totalCalories; // prob should move somewhere else
 }
 @end
 
@@ -29,64 +45,200 @@
 #pragma mark - HorizontalScrollerDelegate methods
 - (void)horizontalScroller:(HorizontalScroller *)scroller clickedViewAtIndex:(int)index
 {
-    currentMealIndex = index;
-    [self showDataForMealAtIndex:index];
+    if (scroller == mainScroller)
+    {
+        currentMainIndex = index;
+        [self showDataForMainAtIndex:index];
+    }
+    else if (scroller == drinksScroller)
+    {
+        currentDrinkIndex = index;
+        [self showDataForDrinkAtIndex:index];
+    }
+    else if (scroller == dessertsScroller)
+    {
+        currentDessertIndex = index;
+        [self showDataForDessertAtIndex:index];
+    }
+}
+
+
+- (void)horizontalScroller:(HorizontalScroller*)scroller selectedViewAtIndex:(int)index
+{
+    if (scroller == mainScroller)
+    {
+        Meal *main = allMains[index];
+        totalCalories += main.calories;
+    }
+    else if (scroller == drinksScroller)
+    {
+        Meal *drink = allDrinks[index];
+        totalCalories += drink.calories;
+    }
+    else if (scroller == dessertsScroller)
+    {
+        Meal *dessert = allDesserts[index];
+        totalCalories += dessert.calories;
+    }
+    
+    NSLog(@"Total calories: %i", totalCalories);
 }
 
 - (NSInteger)numberOfViewsForHorizontalScroller:(HorizontalScroller*)scroller
 {
-    return allMeals.count;
+    if (scroller == mainScroller)
+    {
+        return allMains.count;
+    }
+    else if (scroller == drinksScroller)
+    {
+        return allDrinks.count;
+    }
+    else if (scroller == dessertsScroller)
+    {
+        return allDesserts.count;
+    }
+    return nil;
 }
 
 - (UIView*)horizontalScroller:(HorizontalScroller*)scroller viewAtIndex:(int)index
 {
-    Meal *meal = allMeals[index];
-    return [[MealAlbumView alloc] initWithFrame:CGRectMake(0, 0, 100, 100) mealImage:meal.imagePath];
+    if (scroller == mainScroller)
+    {
+        Meal *main = allMains[index];
+        return [[MealAlbumView alloc] initWithFrame:CGRectMake(0, 0, 100, 100) mealImage:main.imagePath highlightedMealImage:main.highlightedImagePath];
+    }
+    else if (scroller == drinksScroller)
+    {
+        Meal *drink = allDrinks[index];
+        return [[MealAlbumView alloc] initWithFrame:CGRectMake(0, 0, 100, 100) mealImage:drink.imagePath highlightedMealImage:drink.highlightedImagePath];
+    }
+    else if (scroller == dessertsScroller)
+    {
+        Meal *dessert = allDesserts[index];
+        return [[MealAlbumView alloc] initWithFrame:CGRectMake(0, 0, 100, 100) mealImage:dessert.imagePath highlightedMealImage:dessert.highlightedImagePath];
+    }
+    return nil;
 }
 
-- (void)reloadScroller
+- (void)reloadMainScroller
 {
-    allMeals = [[LibraryAPI sharedInstance] getMeals];
-    if (currentMealIndex < 0) currentMealIndex = 0;
-    else if (currentMealIndex >= allMeals.count) currentMealIndex = allMeals.count-1;
-    [scroller reload];
+    allMains = [[LibraryAPI sharedInstance] getMains];
+    if (currentMainIndex < 0) currentMainIndex = 0;
+    else if (currentMainIndex >= allMains.count) currentMainIndex = allMains.count-1;
+    [mainScroller reload];
     
-    [self showDataForMealAtIndex:currentMealIndex];
+    [self showDataForMainAtIndex:currentMainIndex];
+}
+
+
+- (void)reloadDrinksScroller
+{
+    allDrinks = [[LibraryAPI sharedInstance] getDrinks];
+    if (currentDrinkIndex < 0) currentDrinkIndex = 0;
+    else if (currentDrinkIndex >= allDrinks.count) currentDrinkIndex = allDrinks.count-1;
+    [drinksScroller reload];
+    
+    [self showDataForDrinkAtIndex:currentDrinkIndex];
+}
+
+- (void)reloadDessertsScroller
+{
+    allDesserts = [[LibraryAPI sharedInstance] getDesserts];
+    if (currentDessertIndex < 0) currentDessertIndex = 0;
+    else if (currentDessertIndex >= allDesserts.count) currentDessertIndex = allDesserts.count-1;
+    [dessertsScroller reload];
+    
+    [self showDataForDessertAtIndex:currentDessertIndex];
 }
 
 - (NSInteger)initialViewIndexForHorizontalScroller:(HorizontalScroller *)scroller
 {
-    return currentMealIndex;
+    if (scroller == mainScroller)
+    {
+        return currentMainIndex;
+    }
+    else if (scroller == drinksScroller)
+    {
+        return currentDrinkIndex;
+    }
+    else if (scroller == dessertsScroller)
+    {
+        return currentDessertIndex;
+    }
+    return nil;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // 1
-    self.view.backgroundColor = [UIColor colorWithRed:0.76f green:0.81f blue:0.87f alpha:1];
-    currentMealIndex = 0;
+    self.view.backgroundColor = [UIColor blackColor];//colorWithRed:0.76f green:0.81f blue:0.87f alpha:1];
+    currentMainIndex = 0;
+    currentDrinkIndex = 0;
     
     //2
-    allMeals = [[LibraryAPI sharedInstance] getMeals];
+    allMains = [[LibraryAPI sharedInstance] getMains];
+    
+    allDrinks = [[LibraryAPI sharedInstance] getDrinks];
+    
+    allDesserts = [[LibraryAPI sharedInstance] getDesserts];
     
     // 3
-    // the uitableview that presents the album data
-    dataTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 120, self.view.frame.size.width, self.view.frame.size.height-120) style:UITableViewStyleGrouped];
-    dataTable.delegate = self;
-    dataTable.dataSource = self;
-    dataTable.backgroundView = nil;
-    [self.view addSubview:dataTable];
+    // the uitableview that presents the mains data
+    mainsDataTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 10, self.view.frame.size.width, self.view.frame.size.height-120) style:UITableViewStyleGrouped];
+    mainsDataTable.delegate = self;
+    mainsDataTable.dataSource = self;
+    mainsDataTable.backgroundView = nil;
+    [self.view addSubview:mainsDataTable];
+    
+    // the uitableview that presents the drinks data
+    drinksDataTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 180, self.view.frame.size.width, self.view.frame.size.height-120) style:UITableViewStyleGrouped];
+    drinksDataTable.delegate = self;
+    drinksDataTable.dataSource = self;
+    drinksDataTable.backgroundView = nil;
+    [self.view addSubview:drinksDataTable];
+    
+    
+    // the uitableview that presents the desserts data
+    dessertsDataTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 350, self.view.frame.size.width, self.view.frame.size.height-120) style:UITableViewStyleGrouped];
+    dessertsDataTable.delegate = self;
+    dessertsDataTable.dataSource = self;
+    dessertsDataTable.backgroundView = nil;
+    [self.view addSubview:dessertsDataTable];
     
     [self loadPreviousState];
     
-    scroller = [[HorizontalScroller alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 120)];
-    scroller.backgroundColor = [UIColor colorWithRed:0.24f green:0.35f blue:0.49f alpha:1];
-    scroller.delegate = self;
-    [self.view addSubview:scroller];
+    mainScroller = [[HorizontalScroller alloc] initWithFrame:CGRectMake(0, 80, self.view.frame.size.width, 120)];
+    mainScroller.backgroundColor = [UIColor blackColor];//colorWithRed:0.24f green:0.35f blue:0.49f alpha:1];
+    mainScroller.delegate = self;
+    [self.view addSubview:mainScroller];
     
-    [self reloadScroller];
+    [self reloadMainScroller];
     
-    [self showDataForMealAtIndex:currentMealIndex];
+    [self showDataForMainAtIndex:currentMainIndex];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
+    
+    drinksScroller = [[HorizontalScroller alloc] initWithFrame:CGRectMake(0, 250, self.view.frame.size.width, 120)];
+    drinksScroller.backgroundColor = [UIColor blackColor];//colorWithRed:0.24f green:0.35f blue:0.49f alpha:1];
+    drinksScroller.delegate = self;
+    [self.view addSubview:drinksScroller];
+    
+    [self reloadDrinksScroller];
+    
+    [self showDataForDrinkAtIndex:currentDrinkIndex];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
+    
+    dessertsScroller = [[HorizontalScroller alloc] initWithFrame:CGRectMake(0, 420, self.view.frame.size.width, 120)];
+    dessertsScroller.backgroundColor = [UIColor blackColor];//colorWithRed:0.24f green:0.35f blue:0.49f alpha:1];
+    dessertsScroller.delegate = self;
+    [self.view addSubview:dessertsScroller];
+    
+    [self reloadDessertsScroller];
+    
+    [self showDataForDessertAtIndex:currentDessertIndex];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(320-100, 400, 100, 50)];
@@ -102,28 +254,79 @@
     [self.navigationController pushViewController:viewCon animated:YES];
 }
 
-- (void)showDataForMealAtIndex:(int)mealIndex
+- (void)showDataForMainAtIndex:(int)mainIndex
 {
-    // defensive code: make sure the requested index is lower than the amount of albums
-    if (mealIndex < allMeals.count)
+    if (mainIndex < allMains.count)
     {
     	// fetch the meal data
-        Meal *meal = allMeals[mealIndex];
+        Meal *main = allMains[mainIndex];
         // save the meal data to present it later in the tableview
-        currentMealData = [meal tr_tableRepresentation];
+        currentMainData = [main tr_mainTableRepresentation];
     }
     else
     {
-        currentMealData = nil;
+        currentMainData = nil;
     }
     
     // we have the data we need, let's refresh our tableview
-    [dataTable reloadData];
+    [mainsDataTable reloadData];
+}
+
+- (void)showDataForDrinkAtIndex:(int)drinkIndex
+{
+    // defensive code:
+    if (drinkIndex < allDrinks.count)
+    {
+    	// fetch the drink data
+        Meal *drink = allDrinks[drinkIndex];
+        // save the drink data to present it later in the tableview
+        currentDrinkData = [drink tr_drinkTableRepresentation];
+    }
+    else
+    {
+        currentDrinkData = nil;
+    }
+    
+    // we have the data we need, let's refresh our tableview
+    [drinksDataTable reloadData];
+}
+
+- (void)showDataForDessertAtIndex:(int)dessertIndex
+{
+    // defensive code:
+    if (dessertIndex < allDesserts.count)
+    {
+    	// fetch the dessert data
+        Meal *dessert = allDesserts[dessertIndex];
+        // save the dessert data to present it later in the tableview
+        currentDessertData = [dessert tr_dessertTableRepresentation];
+    }
+    else
+    {
+        currentDessertData = nil;
+    }
+    
+    // we have the data we need, let's refresh our tableview
+    [dessertsDataTable reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [currentMealData[@"titles"] count];
+    if (tableView == mainsDataTable)
+    {
+        return [currentMainData[@"titles"] count];
+    }
+    else if (tableView == drinksDataTable)
+    {
+        return [currentDrinkData[@"titles"] count];
+    }
+    else if (tableView == dessertsDataTable)
+    {
+        return [currentDessertData[@"titles"] count];
+    }
+    
+    return nil;
+    
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -134,8 +337,22 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
     }
     
-    cell.textLabel.text = currentMealData[@"titles"][indexPath.row];
-    cell.detailTextLabel.text = currentMealData[@"values"][indexPath.row];
+    
+    if (tableView == mainsDataTable)
+    {
+        cell.textLabel.text = currentMainData[@"titles"][indexPath.row];
+        cell.detailTextLabel.text = currentMainData[@"values"][indexPath.row];
+    }
+    else if (tableView == drinksDataTable)
+    {
+        cell.textLabel.text = currentDrinkData[@"titles"][indexPath.row];
+        cell.detailTextLabel.text = currentDrinkData[@"values"][indexPath.row];
+    }
+    else if (tableView == dessertsDataTable)
+    {
+        cell.textLabel.text = currentDessertData[@"titles"][indexPath.row];
+        cell.detailTextLabel.text = currentDessertData[@"values"][indexPath.row];
+    }
     
     return cell;
 }
@@ -151,13 +368,23 @@
     // When the user leaves the app and then comes back again, he wants it to be in the exact same state
     // he left it. In order to do this we need to save the currently displayed album.
     // Since it's only one piece of information we can use NSUserDefaults.
-    [[NSUserDefaults standardUserDefaults] setInteger:currentMealIndex forKey:@"currentMealIndex"];
+    [[NSUserDefaults standardUserDefaults] setInteger:currentMainIndex forKey:@"currentMealIndex"];
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:currentDrinkIndex forKey:@"currentDrinkIndex"];
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:currentDessertIndex forKey:@"currentDessertIndex"];
 }
 
 - (void)loadPreviousState
 {
-    currentMealIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentMealIndex"];
-    [self showDataForMealAtIndex:currentMealIndex];
+    currentMainIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentMealIndex"];
+    [self showDataForMainAtIndex:currentMainIndex];
+    
+    currentDrinkIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentDrinkIndex"];
+    [self showDataForDrinkAtIndex:currentMainIndex];
+    
+    currentDessertIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentDessertIndex"];
+    [self showDataForDessertAtIndex:currentDessertIndex];
 }
 
 @end

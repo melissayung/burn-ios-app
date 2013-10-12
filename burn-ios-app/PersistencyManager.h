@@ -10,9 +10,18 @@
 #import "Meal.h"
 
 @interface PersistencyManager : NSObject
-- (NSArray*)getMeals;
+- (NSArray*)getMains;
 - (void)addMeal:(Meal*)meal atIndex:(int)index;
 - (void)deleteMealAtIndex:(int)index;
+
+- (NSArray*)getDrinks;
+- (void)addDrink:(Meal*)drink atIndex:(int)index;
+- (void)deleteDrinkAtIndex:(int)index;
+
+- (NSArray*)getDesserts;
+- (void)addDessert:(Meal*)dessert atIndex:(int)index;
+- (void)deleteDessertAtIndex:(int)index;
+
 - (void)saveImage:(UIImage*)image filename:(NSString*)filename;
 - (UIImage*)getImage:(NSString*)filename;
 @end

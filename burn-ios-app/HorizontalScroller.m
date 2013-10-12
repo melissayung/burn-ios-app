@@ -30,10 +30,31 @@
         scroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         scroller.delegate = self;
         [self addSubview:scroller];
+        UILongPressGestureRecognizer *longpressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(scrollerSelected:)];
+        
         UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollerTapped:)];
         [scroller addGestureRecognizer:tapRecognizer];
     }
     return self;
+}
+
+
+// show the highligted image
+- (void)scrollerSelected:(UILongPressGestureRecognizer*)gesture
+{
+    CGPoint location = [gesture locationInView:gesture.view];
+    // we can't use an enumerator here, because we don't want to enumerate over ALL of the UIScrollView subviews.
+    // we want to enumerate only the subviews that we added
+    for (int index=0; index<[self.delegate numberOfViewsForHorizontalScroller:self]; index++)
+    {
+        UIView *view = scroller.subviews[index];
+        if (CGRectContainsPoint(view.frame, location))
+        {
+            [self.delegate horizontalScroller:self selectedViewAtIndex:index];
+            [scroller setContentOffset:CGPointMake(view.frame.origin.x - self.frame.size.width/2 + view.frame.size.width/2, 0) animated:YES];
+            break;
+        }
+    }
 }
 
 - (void)scrollerTapped:(UITapGestureRecognizer*)gesture
