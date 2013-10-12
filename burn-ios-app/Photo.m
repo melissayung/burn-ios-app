@@ -16,6 +16,7 @@
         self.thumbnailURL = [dict objectForKey:@"thumbnail_url"];
         self.photoID = [dict objectForKey:@"photo_id"];
         
+        self.location = CLLocationCoordinate2DMake(NAN, NAN);
         // TODO grab lat long
     }
     return self;

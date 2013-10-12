@@ -33,14 +33,15 @@
     [super viewDidLoad];
     [self.imageView setImageWithURL:[NSURL URLWithString:self.photo.photoURL]];
 
-    [LoadingView show];
-    [[EyeEmNetworkService sharedInstance]fetchPhotoDetailsWithID:self.photo.photoID completion:^(Photo *photo) {
-        [LoadingView hide];
-        // TODO show GPS info
-    } error:^(NSString *errorMsg) {
-        [LoadingView hide];
-        // TODO alert view
-    }];
+//    [LoadingView show];
+//    [[EyeEmNetworkService sharedInstance]fetchPhotoDetails:self.photo completion:^() {
+//        [LoadingView hide];
+//        self.infoLabel.text = [NSString stringWithFormat:@"Latitude: %f - longitude: %f", self.photo.location.latitude, self.photo.location.longitude];
+//        // TODO show GPS info
+//    } error:^(NSString *errorMsg) {
+//        [LoadingView hide];
+//        // TODO alert view
+//    }];
 }
 
 - (void)didReceiveMemoryWarning

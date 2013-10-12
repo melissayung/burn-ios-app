@@ -30,6 +30,9 @@ JTSYNTHESIZE_SINGLETON_FOR_CLASS(EyeEmNetworkService)
         self.httpClient = [[AFHTTPClient alloc]initWithBaseURL:[NSURL URLWithString:kBaseURL]];
         self.accessToken = [[NSUserDefaults standardUserDefaults]objectForKey:kAccessTokenKey];
         self.apiCode = [[NSUserDefaults standardUserDefaults]objectForKey:kAPIKey];
+        
+        //52.500601,13.454376
+        self.currentLocation = CLLocationCoordinate2DMake(52.500601, 13.454376);
     }
     return self;
 }
@@ -43,13 +46,43 @@ JTSYNTHESIZE_SINGLETON_FOR_CLASS(EyeEmNetworkService)
     [[NSUserDefaults standardUserDefaults]setObject:_apiCode forKey:kAPIKey];
 }
 
-    ///v2/photos/939584
-- (void)fetchPhotoDetailsWithID:(NSString*)photoID completion:(void (^)(Photo *photo))completionBlock error:(void (^)(NSString *errorMsg))errorBlock {
-
-    NSURLRequest *request = [self.httpClient requestWithMethod:@"GET" path:[NSString stringWithFormat:@"v2/photos/%@", photoID] parameters:nil];
+- (void)fetchPhotosDetails:(NSArray*)photos completion:(void (^)(void))completionBlock error:(void (^)(NSString *errorMsg))errorBlock {
+    
+    NSMutableArray *photoIDs = [NSMutableArray array];
+    for(Photo *photo in photos) {
+        [photoIDs addObject:photo.photoID];
+    }
+    NSURLRequest *request = [self.httpClient requestWithMethod:@"GET" path:@"/api/v2/photos" parameters:@{@"access_token" : self.accessToken, @"ids" : [photoIDs componentsJoinedByString:@","]}];
+    
     AFJSONRequestOperation *op = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         // TODO get details
-        completionBlock(nil);
+        NSLog(0);
+        NSDictionary *allPhotos = [JSON objectForKey:@"photos"];
+        NSArray *items = [allPhotos objectForKey:@"items"];
+        for(NSDictionary *item in items) {
+            
+        }
+//        NSString *lat = [data objectForKey:@"latitude"];
+//        NSString *lngtd = [data objectForKey:@"longitude"];
+//        photo.location = CLLocationCoordinate2DMake([lat doubleValue], [lngtd doubleValue]);
+        completionBlock();
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        errorBlock(nil);
+    }];
+    [self.httpClient enqueueHTTPRequestOperation:op];
+}
+
+//https://www.eyeem.com/api/v2/photos/18682872?access_token=f7712c1af4b921bae38093ffd1a2b6fa0cf55ccf
+- (void)fetchPhotoDetails:(Photo*)photo completion:(void (^)(void))completionBlock error:(void (^)(NSString *errorMsg))errorBlock {
+
+    NSURLRequest *request = [self.httpClient requestWithMethod:@"GET" path:[NSString stringWithFormat:@"/api/v2/photos/%@", photo.photoID] parameters:@{@"access_token" : self.accessToken}];
+    AFJSONRequestOperation *op = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        // TODO get details
+        NSDictionary *data = [JSON objectForKey:@"photo"];
+        NSString *lat = [data objectForKey:@"latitude"];
+        NSString *lngtd = [data objectForKey:@"longitude"];
+        photo.location = CLLocationCoordinate2DMake([lat doubleValue], [lngtd doubleValue]);
+        completionBlock();
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         errorBlock(nil);
     }];
@@ -62,7 +95,7 @@ https://www.eyeem.com/api/v2/albums?geoSearch=nearbyVenues&lat=52.50094140368&ln
  **/
 - (void)fetchPhotosHavingCoordinates:(CLLocationCoordinate2D)coordinates completion:(void (^)(NSArray *photos))completionBlock error:(void (^)(NSString *errorMsg))errorBlock {
     
-    NSURLRequest *request = [self.httpClient requestWithMethod:@"GET" path:@"/api/v2/albums" parameters:@{@"geoSearch" : @"nearbyVenues", @"lat" : @(52.50094140368), @"lng" : @(13.452136079944), @"type" : @"venue", @"access_token" : self.accessToken}];
+    NSURLRequest *request = [self.httpClient requestWithMethod:@"GET" path:@"/api/v2/albums" parameters:@{@"geoSearch" : @"nearbyVenues", @"lat" : @(self.currentLocation.latitude), @"lng" : @(self.currentLocation.longitude), @"type" : @"venue", @"access_token" : self.accessToken}];
     
     AFJSONRequestOperation *op = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSDictionary *albums = [JSON objectForKey:@"albums"];

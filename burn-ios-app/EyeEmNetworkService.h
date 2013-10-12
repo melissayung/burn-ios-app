@@ -16,7 +16,9 @@
 @property (nonatomic, strong) NSString *apiCode;
 @property (nonatomic, strong) NSString *accessToken;
 
-- (void)fetchPhotoDetailsWithID:(NSString*)photoID completion:(void (^)(Photo *photo))completionBlock error:(void (^)(NSString *errorMsg))errorBlock;
+@property CLLocationCoordinate2D currentLocation;
+- (void)fetchPhotosDetails:(NSArray*)photos completion:(void (^)(void))completionBlock error:(void (^)(NSString *errorMsg))errorBlock;
+- (void)fetchPhotoDetails:(Photo*)photo completion:(void (^)(void))completionBlock error:(void (^)(NSString *errorMsg))errorBlock;
 - (void)fetchPhotosHavingCoordinates:(CLLocationCoordinate2D)coordinates completion:(void (^)(NSArray *photos))completionBlock error:(void (^)(NSString *errorMsg))errorBlock;
 - (void)requestAccessTokenWithCompletion:(void (^)(void))completionBlock error:(void (^)(NSString *errorMsg))errorBlock;
                                                                

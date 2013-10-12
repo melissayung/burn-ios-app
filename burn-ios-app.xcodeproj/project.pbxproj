@@ -34,6 +34,7 @@
 		083293B31809CF880012C3A5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 083293B21809CF880012C3A5 /* LoginViewController.m */; };
 		083293BA1809D3750012C3A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 083293B91809D3750012C3A5 /* Images.xcassets */; };
 		083293BD1809D60C0012C3A5 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 083293BC1809D60C0012C3A5 /* PhotoViewController.m */; };
+		083293C01809E6090012C3A5 /* GeoCodeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 083293BF1809E6090012C3A5 /* GeoCodeService.m */; };
 		08F991361809733A00F0B13A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991351809733A00F0B13A /* Foundation.framework */; };
 		08F991381809733A00F0B13A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991371809733A00F0B13A /* CoreGraphics.framework */; };
 		08F9913A1809733A00F0B13A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991391809733A00F0B13A /* UIKit.framework */; };
@@ -121,6 +122,8 @@
 		083293B91809D3750012C3A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		083293BB1809D60C0012C3A5 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
 		083293BC1809D60C0012C3A5 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		083293BE1809E6090012C3A5 /* GeoCodeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoCodeService.h; sourceTree = "<group>"; };
+		083293BF1809E6090012C3A5 /* GeoCodeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoCodeService.m; sourceTree = "<group>"; };
 		08F991321809733A00F0B13A /* burn-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "burn-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F991351809733A00F0B13A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08F991371809733A00F0B13A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -219,6 +222,7 @@
 		083293A61809CBCC0012C3A5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				70F4700F1809BB54003B507C /* caesarSalad.jpg */,
 				083293AF1809CE6E0012C3A5 /* eyeem_logo.png */,
 				083293AD1809CD7D0012C3A5 /* photo_4.jpeg */,
 				083293AB1809CBFF0012C3A5 /* photo_3.jpeg */,
@@ -271,8 +275,8 @@
 				70F470301809BBB4003B507C /* Meal+TableRepresentation.h */,
 				70F470311809BBB4003B507C /* Meal+TableRepresentation.m */,
 				70F4700A1809BB54003B507C /* Base.lproj */,
-				70F4700F1809BB54003B507C /* caesarSalad.jpg */,
 				70F470101809BB54003B507C /* en.lproj */,
+				08F9913C1809733A00F0B13A /* Supporting Files */,
 				70F470131809BB54003B507C /* HorizontalScroller.h */,
 				70F470141809BB54003B507C /* HorizontalScroller.m */,
 				70F470161809BB54003B507C /* LibraryAPI.h */,
@@ -299,7 +303,6 @@
 				08F991471809733A00F0B13A /* Main.storyboard */,
 				08F9914A1809733A00F0B13A /* ViewController.h */,
 				08F9914B1809733A00F0B13A /* ViewController.m */,
-				08F9913C1809733A00F0B13A /* Supporting Files */,
 				0832931A18098B690012C3A5 /* EyeEmNetworkService.h */,
 				0832931B18098B690012C3A5 /* EyeEmNetworkService.m */,
 				0832931D18098BA10012C3A5 /* Photo.h */,
@@ -312,6 +315,8 @@
 				083293B21809CF880012C3A5 /* LoginViewController.m */,
 				083293BB1809D60C0012C3A5 /* PhotoViewController.h */,
 				083293BC1809D60C0012C3A5 /* PhotoViewController.m */,
+				083293BE1809E6090012C3A5 /* GeoCodeService.h */,
+				083293BF1809E6090012C3A5 /* GeoCodeService.m */,
 			);
 			path = "burn-ios-app";
 			sourceTree = "<group>";
@@ -513,6 +518,7 @@
 				08F9914C1809733A00F0B13A /* ViewController.m in Sources */,
 				0832939C1809BD1B0012C3A5 /* AFJSONRequestOperation.m in Sources */,
 				083293B31809CF880012C3A5 /* LoginViewController.m in Sources */,
+				083293C01809E6090012C3A5 /* GeoCodeService.m in Sources */,
 				083293A11809BD1B0012C3A5 /* AFXMLRequestOperation.m in Sources */,
 				0832932B180993DA0012C3A5 /* StoryboardUtil.m in Sources */,
 				0832939E1809BD1B0012C3A5 /* AFNetworkActivityIndicatorManager.m in Sources */,
