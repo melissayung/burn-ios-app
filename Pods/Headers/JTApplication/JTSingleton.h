@@ -1,0 +1,1 @@
+../../JTApplication/JTSingleton.h

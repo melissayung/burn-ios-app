@@ -7,12 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import "StoryboardUtil.h"
+#import "ViewController.h"
+#import "EyeEmNetworkService.h"
+
+@interface AppDelegate()
+
+@end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+//    UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:[StoryboardUtil loadInitialViewController]];
+//    self.window.rootViewController = navCon;
     return YES;
 }
 							
@@ -41,6 +50,28 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    if([[url absoluteString]rangeOfString:@"burnapp://eyeem_auth"].location != NSNotFound) {
+        NSString *codeParam = @"code=";
+        NSString *urlStr = [url absoluteString];
+        
+        NSRange range = [urlStr rangeOfString:codeParam];
+        if(range.location != NSNotFound) {
+            int location = range.location+codeParam.length;
+            NSString *apiCode = [urlStr substringWithRange:NSMakeRange(location, [urlStr length]-location)];
+            [EyeEmNetworkService sharedInstance].apiCode = apiCode;
+            [[EyeEmNetworkService sharedInstance]requestAccessTokenWithCompletion:^{
+                
+                [(ViewController*)((UINavigationController*)self.window.rootViewController).visibleViewController performSelector:@selector(fetchPhotos) withObject:nil];
+            } error:^(NSString *errorMsg) {
+                NSLog(0);
+            }];
+        }
+       
+    }
+    return YES;
 }
 
 @end

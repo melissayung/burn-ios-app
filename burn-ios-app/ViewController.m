@@ -86,7 +86,7 @@
     
     [self showDataForMealAtIndex:currentMealIndex];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
-
+    
 }
 
 - (void)showDataForMealAtIndex:(int)mealIndex

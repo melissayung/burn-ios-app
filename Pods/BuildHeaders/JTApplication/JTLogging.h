@@ -1,0 +1,1 @@
+../../JTApplication/JTLogging.h
