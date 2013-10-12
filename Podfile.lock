@@ -1,0 +1,19 @@
+PODS:
+  - AFNetworking (1.1.0)
+  - JSONKit (1.5pre)
+  - JTApplication (0.0.1)
+  - NXOAuth2Client (1.2.4)
+
+DEPENDENCIES:
+  - AFNetworking (~> 1.1.0)
+  - JSONKit (~> 1.4)
+  - JTApplication (~> 0.0.1)
+  - NXOAuth2Client (~> 1.2.2)
+
+SPEC CHECKSUMS:
+  AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
+  JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
+  JTApplication: 533121f96be5ae0b529833fe9eeb2ee6fc5023e0
+  NXOAuth2Client: 4666d0d73ba7689181ef4597e1b1beda3978c724
+
+COCOAPODS: 0.26.2

@@ -1,0 +1,1 @@
+../../JTApplication/UIResponder+AppDelegateAddons.h
