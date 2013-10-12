@@ -87,6 +87,16 @@
     [self showDataForMealAtIndex:currentMealIndex];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(320-100, 400, 100, 50)];
+    [button setTitle:@"Next" forState:UIControlStateNormal];
+
+    [self.view addSubview:button];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(nextButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)nextButtonPressed:(id)sender {
+    NSLog(0);
 }
 
 - (void)showDataForMealAtIndex:(int)mealIndex

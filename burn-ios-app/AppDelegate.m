@@ -20,8 +20,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-//    UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:[StoryboardUtil loadInitialViewController]];
+//    UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:[StoryboardUtil loadViewControllerWithID:@"TourView"]];
 //    self.window.rootViewController = navCon;
+//    [self.window makeKeyAndVisible];
     return YES;
 }
 							
@@ -64,7 +65,9 @@
             [EyeEmNetworkService sharedInstance].apiCode = apiCode;
             [[EyeEmNetworkService sharedInstance]requestAccessTokenWithCompletion:^{
                 
-                [(ViewController*)((UINavigationController*)self.window.rootViewController).visibleViewController performSelector:@selector(fetchPhotos) withObject:nil];
+                ViewController *viewCon = [[ViewController alloc]init];
+//                UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:viewCon];
+                self.window.rootViewController = viewCon;
             } error:^(NSString *errorMsg) {
                 NSLog(0);
             }];
