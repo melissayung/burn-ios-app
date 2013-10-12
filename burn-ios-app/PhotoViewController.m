@@ -10,6 +10,9 @@
 #import "UIImageView+AFNetworking.h"
 #import "EyeEmNetworkService.h"
 #import "LoadingView.h"
+#import "GeoCodeService.h"
+#import "MapViewController.h"
+#import "StoryboardUtil.h"
 
 @interface PhotoViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *infoLabel;
@@ -32,16 +35,25 @@
 {
     [super viewDidLoad];
     [self.imageView setImageWithURL:[NSURL URLWithString:self.photo.photoURL]];
+    self.infoLabel.text = @"";
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Map" style:UIBarButtonItemStyleBordered target:self action:@selector(showMap)];
+    
+    [[GeoCodeService sharedInstance]lookUpAddressFromCoordinate:[EyeEmNetworkService sharedInstance].currentLocation completion:^(NSString *location) {
+        self.infoLabel.text = location;
+    } error:^(NSString *errorMsg) {
+        
+    }];
+    self.infoLabel.text = [NSString stringWithFormat:@"Latitude: %f - longitude: %f", self.photo.location.latitude, self.photo.location.longitude];
+}
 
-//    [LoadingView show];
-//    [[EyeEmNetworkService sharedInstance]fetchPhotoDetails:self.photo completion:^() {
-//        [LoadingView hide];
-//        self.infoLabel.text = [NSString stringWithFormat:@"Latitude: %f - longitude: %f", self.photo.location.latitude, self.photo.location.longitude];
-//        // TODO show GPS info
-//    } error:^(NSString *errorMsg) {
-//        [LoadingView hide];
-//        // TODO alert view
-//    }];
+- (void)showMap {
+    [UIView beginAnimations:@"animation" context:nil];
+    MapViewController *mapViewCon = (MapViewController*)[StoryboardUtil loadViewControllerWithID:@"PhotoMapView"];
+    mapViewCon.location = self.photo.location;
+    [self.navigationController pushViewController:mapViewCon animated:NO];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.navigationController.view cache:NO];
+    [UIView commitAnimations];
 }
 
 - (void)didReceiveMemoryWarning

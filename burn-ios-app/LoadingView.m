@@ -7,6 +7,7 @@
 //
 
 #import "LoadingView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation LoadingView
 JTSYNTHESIZE_SINGLETON_FOR_CLASS(LoadingView)
@@ -18,6 +19,11 @@ JTSYNTHESIZE_SINGLETON_FOR_CLASS(LoadingView)
         // Initialization code
     }
     return self;
+}
+
+- (void)awakeFromNib {
+    self.layer.cornerRadius = 10;
+    self.layer.masksToBounds = YES;
 }
 
 + (void)show {

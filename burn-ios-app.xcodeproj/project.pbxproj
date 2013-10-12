@@ -35,6 +35,9 @@
 		083293BA1809D3750012C3A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 083293B91809D3750012C3A5 /* Images.xcassets */; };
 		083293BD1809D60C0012C3A5 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 083293BC1809D60C0012C3A5 /* PhotoViewController.m */; };
 		083293C01809E6090012C3A5 /* GeoCodeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 083293BF1809E6090012C3A5 /* GeoCodeService.m */; };
+		083293C21809FFF70012C3A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083293C11809FFF70012C3A5 /* QuartzCore.framework */; };
+		083293C5180A045E0012C3A5 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 083293C4180A045E0012C3A5 /* MapViewController.m */; };
+		083293C7180A05300012C3A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083293C6180A05300012C3A5 /* MapKit.framework */; };
 		08F991361809733A00F0B13A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991351809733A00F0B13A /* Foundation.framework */; };
 		08F991381809733A00F0B13A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991371809733A00F0B13A /* CoreGraphics.framework */; };
 		08F9913A1809733A00F0B13A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991391809733A00F0B13A /* UIKit.framework */; };
@@ -124,6 +127,10 @@
 		083293BC1809D60C0012C3A5 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		083293BE1809E6090012C3A5 /* GeoCodeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoCodeService.h; sourceTree = "<group>"; };
 		083293BF1809E6090012C3A5 /* GeoCodeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoCodeService.m; sourceTree = "<group>"; };
+		083293C11809FFF70012C3A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		083293C3180A045E0012C3A5 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		083293C4180A045E0012C3A5 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		083293C6180A05300012C3A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		08F991321809733A00F0B13A /* burn-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "burn-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F991351809733A00F0B13A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08F991371809733A00F0B13A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -171,6 +178,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				083293C7180A05300012C3A5 /* MapKit.framework in Frameworks */,
+				083293C21809FFF70012C3A5 /* QuartzCore.framework in Frameworks */,
 				0832932118098BDC0012C3A5 /* CoreLocation.framework in Frameworks */,
 				08F991381809733A00F0B13A /* CoreGraphics.framework in Frameworks */,
 				08F9913A1809733A00F0B13A /* UIKit.framework in Frameworks */,
@@ -255,6 +264,8 @@
 		08F991341809733A00F0B13A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				083293C6180A05300012C3A5 /* MapKit.framework */,
+				083293C11809FFF70012C3A5 /* QuartzCore.framework */,
 				0832932018098BDB0012C3A5 /* CoreLocation.framework */,
 				08F991351809733A00F0B13A /* Foundation.framework */,
 				08F991371809733A00F0B13A /* CoreGraphics.framework */,
@@ -317,6 +328,8 @@
 				083293BC1809D60C0012C3A5 /* PhotoViewController.m */,
 				083293BE1809E6090012C3A5 /* GeoCodeService.h */,
 				083293BF1809E6090012C3A5 /* GeoCodeService.m */,
+				083293C3180A045E0012C3A5 /* MapViewController.h */,
+				083293C4180A045E0012C3A5 /* MapViewController.m */,
 			);
 			path = "burn-ios-app";
 			sourceTree = "<group>";
@@ -539,6 +552,7 @@
 				08329330180997BB0012C3A5 /* LoadingView.m in Sources */,
 				08F991421809733A00F0B13A /* main.m in Sources */,
 				70F4702C1809BB54003B507C /* PersistencyManager.m in Sources */,
+				083293C5180A045E0012C3A5 /* MapViewController.m in Sources */,
 				0832939A1809BD1B0012C3A5 /* AFHTTPRequestOperation.m in Sources */,
 				083293991809BD1B0012C3A5 /* AFHTTPClient.m in Sources */,
 			);
