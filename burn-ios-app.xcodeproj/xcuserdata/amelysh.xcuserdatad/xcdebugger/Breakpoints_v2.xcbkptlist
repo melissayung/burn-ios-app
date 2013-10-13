@@ -29,8 +29,38 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
             endingLineNumber = "15"
-            landmarkName = "@interface MealAlbumView"
-            landmarkType = "2">
+            landmarkName = "mealImage"
+            landmarkType = "19">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MealAlbumView mealImage]"
+                  moduleName = "burn-ios-app"
+                  urlString = "file://localhost/Users/amelysh/Documents/burn-ios-app/burn-ios-app/MealAlbumView.h"
+                  timestampString = "403351683.780573"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MealAlbumView setMealImage:]"
+                  moduleName = "burn-ios-app"
+                  urlString = "file://localhost/Users/amelysh/Documents/burn-ios-app/burn-ios-app/MealAlbumView.h"
+                  timestampString = "403351683.781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
