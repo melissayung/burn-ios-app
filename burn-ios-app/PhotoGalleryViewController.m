@@ -78,8 +78,10 @@
     if(!isnan(photo.location.latitude)) {
         double distanceInM = [self distanceBetweenLocationOrigin:[EyeEmNetworkService sharedInstance].currentLocation andDestination:photo.location];
         double calories = [self caloriesBurnedForDistance:distanceInM/1000];
+        photo.distancdeInM = floor(distanceInM);
+        
         label.hidden = NO;
-        label.text = [NSString stringWithFormat:@"%@m/%@cals", [formatter stringFromNumber:@(distanceInM)], [formatter stringFromNumber:@(calories)]];
+        label.text = [NSString stringWithFormat:@"%@m/%@cals", [formatter stringFromNumber:@(photo.distancdeInM)], [formatter stringFromNumber:@(calories)]];
     }
 }
 

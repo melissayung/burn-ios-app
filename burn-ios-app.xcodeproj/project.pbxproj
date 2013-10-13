@@ -43,6 +43,7 @@
 		0832940A180A92DE0012C3A5 /* workout_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08329408180A92DE0012C3A5 /* workout_icon@2x.png */; };
 		0832940C180A930A0012C3A5 /* sushi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0832940B180A930A0012C3A5 /* sushi.jpg */; };
 		0832940E180A991B0012C3A5 /* coffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0832940D180A991B0012C3A5 /* coffee.jpg */; };
+		08329410180AA14B0012C3A5 /* share-on-facebook-button.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0832940F180AA14B0012C3A5 /* share-on-facebook-button.gif */; };
 		08F991361809733A00F0B13A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991351809733A00F0B13A /* Foundation.framework */; };
 		08F991381809733A00F0B13A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991371809733A00F0B13A /* CoreGraphics.framework */; };
 		08F9913A1809733A00F0B13A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991391809733A00F0B13A /* UIKit.framework */; };
@@ -157,6 +158,7 @@
 		08329408180A92DE0012C3A5 /* workout_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "workout_icon@2x.png"; sourceTree = "<group>"; };
 		0832940B180A930A0012C3A5 /* sushi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sushi.jpg; sourceTree = "<group>"; };
 		0832940D180A991B0012C3A5 /* coffee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffee.jpg; sourceTree = "<group>"; };
+		0832940F180AA14B0012C3A5 /* share-on-facebook-button.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "share-on-facebook-button.gif"; sourceTree = "<group>"; };
 		08F991321809733A00F0B13A /* burn-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "burn-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F991351809733A00F0B13A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08F991371809733A00F0B13A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -272,6 +274,7 @@
 		083293A61809CBCC0012C3A5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0832940F180AA14B0012C3A5 /* share-on-facebook-button.gif */,
 				0832940D180A991B0012C3A5 /* coffee.jpg */,
 				0832940B180A930A0012C3A5 /* sushi.jpg */,
 				08329407180A92DE0012C3A5 /* workout_icon.png */,
@@ -545,6 +548,7 @@
 				70F470AE180A3245003B507C /* dnut.jpg in Resources */,
 				0832940C180A930A0012C3A5 /* sushi.jpg in Resources */,
 				70F470CA180A3A1A003B507C /* juice.jpg in Resources */,
+				08329410180AA14B0012C3A5 /* share-on-facebook-button.gif in Resources */,
 				0832932F180997BB0012C3A5 /* LoadingView.xib in Resources */,
 				70F4709F180A2F40003B507C /* icetea.jpg in Resources */,
 				70F4702B1809BB54003B507C /* pasta.jpg in Resources */,
