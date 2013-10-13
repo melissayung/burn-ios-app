@@ -34,6 +34,8 @@
         
         UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollerTapped:)];
         [scroller addGestureRecognizer:tapRecognizer];
+        
+        self.views = [NSMutableArray array];
     }
     return self;
 }
@@ -84,6 +86,8 @@
         [obj removeFromSuperview];
     }];
     
+    self.views = [NSMutableArray array];
+    
     // 3 - xValue is the starting point of the views inside the scroller
     CGFloat xValue = VIEWS_OFFSET;
     for (int i=0; i<[self.delegate numberOfViewsForHorizontalScroller:self]; i++)
@@ -91,6 +95,9 @@
         // 4 - add a view at the right position
         xValue += VIEW_PADDING;
         UIView *view = [self.delegate horizontalScroller:self viewAtIndex:i];
+        [self.views addObject:view];
+        
+        view.tag = 99+i;
         view.frame = CGRectMake(xValue, VIEW_PADDING, VIEW_DIMENSIONS, VIEW_DIMENSIONS);
         [scroller addSubview:view];
         xValue += VIEW_DIMENSIONS+VIEW_PADDING;

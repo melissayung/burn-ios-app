@@ -45,6 +45,15 @@
 #pragma mark - HorizontalScrollerDelegate methods
 - (void)horizontalScroller:(HorizontalScroller *)scroller clickedViewAtIndex:(int)index
 {
+    // clear selection
+    for(UIView *view in scroller.views) {
+        if([view isKindOfClass:[MealAlbumView class]]) {
+            ((MealAlbumView*)view).selected = NO;
+        }
+    };
+    MealAlbumView *view = [scroller.views objectAtIndex:index];
+    view.selected = YES;
+    
     if (scroller == mainScroller)
     {
         currentMainIndex = index;

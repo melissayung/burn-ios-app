@@ -11,6 +11,7 @@
 @protocol HorizontalScrollerDelegate;
 
 @interface HorizontalScroller : UIView
+@property (nonatomic, strong) NSMutableArray *views;
 @property (weak) id<HorizontalScrollerDelegate> delegate;
 - (void)reload;
 @end

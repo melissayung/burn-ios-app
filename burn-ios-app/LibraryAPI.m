@@ -55,45 +55,45 @@
     // 1
     UIImageView *imageView = notification.userInfo[@"imageView"];
     NSString *imagePath = notification.userInfo[@"imagePath"];
-    
-    UIImageView *highlightedImageView = notification.userInfo[@"highlightedImageView"];
-    NSString *highlightedImagePath = notification.userInfo[@"highlightedImagePath"];
-    
+//    
+//    UIImageView *highlightedImageView = notification.userInfo[@"highlightedImageView"];
+//    NSString *highlightedImagePath = notification.userInfo[@"highlightedImagePath"];
+//    
     // 2
-    imageView.image = [persistencyManager getImage:[imagePath lastPathComponent]];
-    highlightedImageView.image = [persistencyManager getImage:[highlightedImagePath lastPathComponent]];
+    imageView.image = [UIImage imageNamed:imagePath];
+//    highlightedImageView.image = [persistencyManager getImage:[highlightedImagePath lastPathComponent]];
     
-    if (imageView.image == nil)
-    {
-    	// 3
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
-            UIImage *image = [UIImage imageNamed:imagePath];
-            //[httpClient downloadImage:coverUrl];
-            
-            // 4
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                imageView.image = image;
-                [persistencyManager saveImage:image filename:[imagePath lastPathComponent]];
-            });
-        });
-    }
+//    if (imageView.image == nil)
+//    {
+//    	// 3
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//            
+//            UIImage *image = [UIImage imageNamed:imagePath];
+//            //[httpClient downloadImage:coverUrl];
+//            
+//            // 4
+//            dispatch_sync(dispatch_get_main_queue(), ^{
+//                imageView.image = image;
+//                [persistencyManager saveImage:image filename:[imagePath lastPathComponent]];
+//            });
+//        });
+//    }
    
-    if (highlightedImageView.image == nil)
-    {
-    	// 3
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
-            UIImage *highligtedImage = [UIImage imageNamed:highlightedImagePath];
-            //[httpClient downloadImage:coverUrl];
-            
-            // 4
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                highlightedImageView.image = highligtedImage;
-                [persistencyManager saveImage:highligtedImage filename:[highlightedImagePath lastPathComponent]];
-            });
-        });
-    }
+//    if (highlightedImageView.image == nil)
+//    {
+//    	// 3
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//            
+//            UIImage *highligtedImage = [UIImage imageNamed:highlightedImagePath];
+//            //[httpClient downloadImage:coverUrl];
+//            
+//            // 4
+//            dispatch_sync(dispatch_get_main_queue(), ^{
+//                highlightedImageView.image = highligtedImage;
+//                [persistencyManager saveImage:highligtedImage filename:[highlightedImagePath lastPathComponent]];
+//            });
+//        });
+//    }
 
 }
 

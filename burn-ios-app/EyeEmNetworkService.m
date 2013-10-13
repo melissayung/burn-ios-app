@@ -44,6 +44,7 @@ JTSYNTHESIZE_SINGLETON_FOR_CLASS(EyeEmNetworkService)
 - (void)setApiCode:(NSString *)apiCode {
     _apiCode = apiCode;
     [[NSUserDefaults standardUserDefaults]setObject:_apiCode forKey:kAPIKey];
+    [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
 - (void)fetchPhotosDetails:(NSArray*)photos completion:(void (^)(void))completionBlock error:(void (^)(NSString *errorMsg))errorBlock {
@@ -136,6 +137,7 @@ https://www.eyeem.com/api/v2/albums?geoSearch=nearbyVenues&lat=52.50094140368&ln
         // TODO keep track of expiry?
         self.accessToken = [JSON objectForKey:@"access_token"];
         [[NSUserDefaults standardUserDefaults]setObject:self.accessToken forKey:kAccessTokenKey];
+        [[NSUserDefaults standardUserDefaults]synchronize];
         
         completionBlock();
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
