@@ -242,12 +242,13 @@
     [self showDataForDessertAtIndex:currentDessertIndex];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
-    //220, 400
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 520, 100, 50)];
-    [button setTitle:@"Burn" forState:UIControlStateNormal];
+    //100, 520, 100
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 520, 480, 50)];
+    [button setTitle:@"Let's go explore" forState:UIControlStateNormal];
 
     [self.view addSubview:button];
-    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor darkGrayColor]];
     [button addTarget:self action:@selector(nextButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 

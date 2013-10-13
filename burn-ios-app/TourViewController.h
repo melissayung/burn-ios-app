@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TourViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIImageView *loginImaveView;
 
 @end

@@ -11,7 +11,12 @@
 
 @interface TourViewController ()
 
+
 @end
+
+
+NSMutableArray* pics;
+int counter;
 
 @implementation TourViewController
 
@@ -31,7 +36,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    counter = 0;
+    
+    pics = [[NSMutableArray alloc] init];
+    [pics addObject:[UIImage imageNamed:@"photo_1.jpeg"]];
+    [pics addObject:[UIImage imageNamed:@"photo_2.jpeg"]];
+    [pics addObject:[UIImage imageNamed:@"photo_3.jpeg"]];
+    [pics addObject:[UIImage imageNamed:@"photo_4.jpeg"]];
+
 	// Do any additional setup after loading the view.
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(swapImage) userInfo:nil repeats:NO];
+}
+
+- (void) swapImage
+{
+    counter++;
+    int index = counter % 4;
+    UIImage *pic = pics[index];
+    
+    [UIView transitionWithView:self.view duration:2 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        self.loginImaveView.image = pic;
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+	// Do any additional setup after loading the view.
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(swapImage) userInfo:nil repeats:NO];
 }
 
 - (void)didReceiveMemoryWarning

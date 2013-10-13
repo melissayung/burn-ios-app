@@ -11,19 +11,23 @@
 @implementation Meal (TableRepresentation)
 - (NSDictionary*)tr_mainTableRepresentation
 {
+    NSString *display = [NSString stringWithFormat:@"%@%@%i%@", self.label, @" (", self.calories, @" cals)"];
+    
     return @{@"titles":@[@"Food"],
-             @"values":@[self.label]};
+             @"values":@[display]};
 }
 
 - (NSDictionary*)tr_drinkTableRepresentation
 {
+    NSString *display = [NSString stringWithFormat:@"%@%@%i%@", self.label, @" (", self.calories, @" cals)"];
     return @{@"titles":@[@"Drink"],
-             @"values":@[self.label]};
+             @"values":@[display]};
 }
 
 - (NSDictionary*)tr_dessertTableRepresentation
 {
+    NSString *display = [NSString stringWithFormat:@"%@%@%i%@", self.label, @" (", self.calories, @" cals)"];
     return @{@"titles":@[@"Treat"],
-             @"values":@[self.label]};
+             @"values":@[display]};
 }
 @end

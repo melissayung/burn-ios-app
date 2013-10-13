@@ -79,6 +79,7 @@
 		70F470C2180A379F003B507C /* coke2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470C0180A379F003B507C /* coke2.jpg */; };
 		70F470C9180A3A1A003B507C /* juice2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470C7180A3A1A003B507C /* juice2.jpg */; };
 		70F470CA180A3A1A003B507C /* juice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470C8180A3A1A003B507C /* juice.jpg */; };
+		70F470D0180AA188003B507C /* littleBite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470CF180AA188003B507C /* littleBite.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +201,7 @@
 		70F470C0180A379F003B507C /* coke2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coke2.jpg; sourceTree = "<group>"; };
 		70F470C7180A3A1A003B507C /* juice2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = juice2.jpg; sourceTree = "<group>"; };
 		70F470C8180A3A1A003B507C /* juice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = juice.jpg; sourceTree = "<group>"; };
+		70F470CF180AA188003B507C /* littleBite.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = littleBite.jpg; sourceTree = "<group>"; };
 		7258041D3A8042738204AFC7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -363,6 +365,7 @@
 		08F9913C1809733A00F0B13A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70F470CF180AA188003B507C /* littleBite.jpg */,
 				70F470C7180A3A1A003B507C /* juice2.jpg */,
 				70F470C8180A3A1A003B507C /* juice.jpg */,
 				70F470C0180A379F003B507C /* coke2.jpg */,
@@ -518,6 +521,7 @@
 				70F470C2180A379F003B507C /* coke2.jpg in Resources */,
 				70F4702F1809BB54003B507C /* soup.jpg in Resources */,
 				70F4707A180A1F9B003B507C /* doughnut.jpg in Resources */,
+				70F470D0180AA188003B507C /* littleBite.jpg in Resources */,
 				083293B01809CE6E0012C3A5 /* eyeem_logo.png in Resources */,
 				70F470221809BB54003B507C /* Main.storyboard in Resources */,
 				70F470AA180A315B003B507C /* eclair.jpg in Resources */,

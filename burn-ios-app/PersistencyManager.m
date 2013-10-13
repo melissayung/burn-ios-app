@@ -25,30 +25,30 @@
     if (self) {
     	// a dummy list of meals
         mains = [NSMutableArray arrayWithArray:
-                 @[[[Meal alloc] initWithLabel:@"A sushi roll" imagePath:@"sushi.jpg" highlightedImagePath:@"sushi.jpg" calories:130],
-                   [[Meal alloc] initWithLabel:@"A ham & cheese sandwich" imagePath:@"sandwich.jpg" highlightedImagePath:@"sushi.jpg" calories:350],
-                   [[Meal alloc] initWithLabel:@"A slice of pizza" imagePath:@"pizzaSlice.jpg" highlightedImagePath:@"sushi.jpg" calories:310],
-                   [[Meal alloc] initWithLabel:@"Caesar salad" imagePath:@"caesarSalad.jpg" highlightedImagePath:@"sushi.jpg" calories:170],
-                   [[Meal alloc] initWithLabel:@"A pasta plate" imagePath:@"pasta.jpg"highlightedImagePath:@"sushi.jpg" calories:500],
-                   [[Meal alloc] initWithLabel:@"Warm soup" imagePath:@"soup.jpg" highlightedImagePath:@"sushi.jpg" calories:140]]
+                 @[[[Meal alloc] initWithLabel:@"Sushi Roll" imagePath:@"sushi.jpg" highlightedImagePath:@"sushi.jpg" calories:130],
+                   [[Meal alloc] initWithLabel:@"Sandwich" imagePath:@"sandwich.jpg" highlightedImagePath:@"sushi.jpg" calories:280],
+                   [[Meal alloc] initWithLabel:@"Pizza Slice" imagePath:@"pizzaSlice.jpg" highlightedImagePath:@"sushi.jpg" calories:310],
+                   [[Meal alloc] initWithLabel:@"Caesar Salad" imagePath:@"caesarSalad.jpg" highlightedImagePath:@"sushi.jpg" calories:170],
+                   [[Meal alloc] initWithLabel:@"Pasta" imagePath:@"pasta.jpg" highlightedImagePath:@"sushi.jpg" calories:400],
+                   [[Meal alloc] initWithLabel:@"Warm Soup" imagePath:@"soup.jpg" highlightedImagePath:@"sushi.jpg" calories:140]]
                    ];
 
     
         drinks = [NSMutableArray arrayWithArray:
-                 @[[[Meal alloc] initWithLabel:@"A can of Coca Cola" imagePath:@"coke2.jpg" highlightedImagePath:@"sushi.jpg" calories:135],
+                 @[[[Meal alloc] initWithLabel:@"Can of Coca Cola" imagePath:@"coke2.jpg" highlightedImagePath:@"sushi.jpg" calories:135],
                    [[Meal alloc] initWithLabel:@"Cappuccino" imagePath:@"coffee.jpg" highlightedImagePath:@"sushi.jpg" calories:100],
                    [[Meal alloc] initWithLabel:@"Ice tea" imagePath:@"icetea.jpg" highlightedImagePath:@"sushi.jpg" calories:110],
-                   [[Meal alloc] initWithLabel:@"A glass of red wine" imagePath:@"wine.jpg" highlightedImagePath:@"sushi.jpg" calories:150],
-                   [[Meal alloc] initWithLabel:@"A glass of apple juice" imagePath:@"juice.jpg"highlightedImagePath:@"sushi.jpg" calories:110],
-                   [[Meal alloc] initWithLabel:@"A pint of beer" imagePath:@"pintOfBeer.jpg" highlightedImagePath:@"sushi.jpg" calories:150]]
+                   [[Meal alloc] initWithLabel:@"Red Wine" imagePath:@"wine.jpg" highlightedImagePath:@"sushi.jpg" calories:150],
+                   [[Meal alloc] initWithLabel:@"Apple Juice" imagePath:@"juice.jpg"highlightedImagePath:@"sushi.jpg" calories:110],
+                   [[Meal alloc] initWithLabel:@"Beer" imagePath:@"pintOfBeer.jpg" highlightedImagePath:@"sushi.jpg" calories:150]]
                    ];
         //
         
         desserts = [NSMutableArray arrayWithArray:
-                 @[[[Meal alloc] initWithLabel:@"An eclair" imagePath:@"eclair.jpg" highlightedImagePath:@"sushi.jpg" calories:145],
-                   [[Meal alloc] initWithLabel:@"Some frozen yoghurt" imagePath:@"yog.jpg" highlightedImagePath:@"sushi.jpg" calories:65],
+                 @[[[Meal alloc] initWithLabel:@"An eclair" imagePath:@"littleBite.jpg" highlightedImagePath:@"bite.jpg" calories:140],
+                   [[Meal alloc] initWithLabel:@"Frozen Yoghurt" imagePath:@"yog.jpg" highlightedImagePath:@"sushi.jpg" calories:65],
                    [[Meal alloc] initWithLabel:@"Gingerbread" imagePath:@"gingerbread2.jpg" highlightedImagePath:@"sushi.jpg" calories:95],
-                   [[Meal alloc] initWithLabel:@"A slice of choc cake" imagePath:@"chocCake.jpg" highlightedImagePath:@"sushi.jpg" calories:235],
+                   [[Meal alloc] initWithLabel:@"Chocolcate Cake" imagePath:@"chocCake.jpg" highlightedImagePath:@"sushi.jpg" calories:235],
                    [[Meal alloc] initWithLabel:@"A macaron" imagePath:@"macarons.jpg" highlightedImagePath:@"sushi.jpg" calories:90],
                    [[Meal alloc] initWithLabel:@"A doughnut" imagePath:@"dnut.jpg" highlightedImagePath:@"sushi.jpg" calories:110]]
                    ];
