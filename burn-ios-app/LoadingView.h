@@ -14,5 +14,5 @@
 + (LoadingView*)sharedInstance;
 + (void)show;
 + (void)hide;
-
++ (void)showWithText:(NSString*)text;
 @end

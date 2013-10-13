@@ -13,6 +13,9 @@
 #import "Meal+TableRepresentation.h"
 #import "PhotoGalleryViewController.h"
 #import "StoryboardUtil.h"
+#import "LoadingView.h"
+#import "EyeEmNetworkService.h"
+#import "LocationManager.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate, HorizontalScrollerDelegate> {
     
@@ -280,9 +283,36 @@
 
 - (void)nextButtonPressed:(id)sender {
     // now is a good time to calculate addUpAllCaloriesToBurn;
-
+    NSInteger calories = [self addUpAllCaloriesToBurn];
+    [LoadingView showWithText:[NSString stringWithFormat:@"Burning off %d calories", calories]];
+    
     PhotoGalleryViewController *viewCon = (PhotoGalleryViewController*)[StoryboardUtil loadViewControllerWithID:@"PhotoGallery"];
-    [self.navigationController pushViewController:viewCon animated:YES];
+    
+    
+        [[EyeEmNetworkService sharedInstance]fetchPhotosHavingCoordinates:[LocationManager sharedInstance].currentLocation.coordinate completion:^(NSArray *photos) {
+            
+            viewCon.photos = photos;
+            
+            // fetch details for first 20 photos
+            // need to think of strategy to load
+            __block NSInteger count = 0;
+            NSInteger max = 20;
+            for(int i=0; i<max; i++) {
+                [[EyeEmNetworkService sharedInstance]fetchPhotoDetails:[photos objectAtIndex:i ] completion:^{
+                    
+                    count++;
+                    if(count == max) {
+                        [LoadingView hide];
+                        [self.navigationController pushViewController:viewCon animated:YES];
+                    }
+                } error:^(NSString *errorMsg) {
+                    [LoadingView hide];
+                }];
+            }
+        } error:^(NSString *errorMsg) {
+            NSLog(0);
+        }];
+
 }
 
 - (void)showDataForMainAtIndex:(int)mainIndex

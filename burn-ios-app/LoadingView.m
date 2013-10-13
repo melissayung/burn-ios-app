@@ -9,6 +9,12 @@
 #import "LoadingView.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface LoadingView()
+@property (strong, nonatomic) IBOutlet UILabel *textLabel;
+@property (strong, nonatomic) IBOutlet UIView *bgView;
+
+@end
+
 @implementation LoadingView
 JTSYNTHESIZE_SINGLETON_FOR_CLASS(LoadingView)
 
@@ -22,26 +28,31 @@ JTSYNTHESIZE_SINGLETON_FOR_CLASS(LoadingView)
 }
 
 - (void)awakeFromNib {
-    self.layer.cornerRadius = 10;
-    self.layer.masksToBounds = YES;
+    self.bgView.layer.cornerRadius = 10;
+    self.bgView.layer.masksToBounds = YES;
+}
+
++ (void)showWithText:(NSString*)text {
+    LoadingView *loadingView = [[[NSBundle mainBundle]loadNibNamed:@"LoadingView" owner:nil options:nil]firstObject];
+    ((UILabel*)[loadingView viewWithTag:99]).text = text;
+    loadingView.alpha = 0.0;
+    [[[UIApplication sharedApplication]keyWindow] addSubview:loadingView];
+    [UIView animateWithDuration:0.3 animations:^{
+        loadingView.alpha = 1.0;
+    }];
 }
 
 + (void)show {
-    LoadingView *loadingView = [[[NSBundle mainBundle]loadNibNamed:@"LoadingView" owner:nil options:nil]firstObject];
-    [[[UIApplication sharedApplication]keyWindow] addSubview:loadingView];
+    [LoadingView showWithText:@"Loading..."];
 }
 
 + (void)hide {
-    [[[[[UIApplication sharedApplication]keyWindow]subviews]lastObject]removeFromSuperview];
+    UIView *loadingView = [[[[UIApplication sharedApplication]keyWindow]subviews]lastObject];
+    [UIView animateWithDuration:0.3 animations:^{
+        loadingView.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [loadingView removeFromSuperview];
+    }];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

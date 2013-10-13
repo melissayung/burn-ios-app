@@ -45,32 +45,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if(!self.photos) {
-        [LoadingView show];
-        [[EyeEmNetworkService sharedInstance]fetchPhotosHavingCoordinates:[LocationManager sharedInstance].currentLocation.coordinate completion:^(NSArray *photos) {
-            
-            self.photos = photos;
-            
-            // fetch details for first 20 photos
-            // need to think of strategy to load
-            __block NSInteger count = 0;
-            NSInteger max = 20;
-            for(int i=0; i<max; i++) {
-                [[EyeEmNetworkService sharedInstance]fetchPhotoDetails:[self.photos objectAtIndex:i ] completion:^{
-                    
-                    count++;
-                    if(count == max) {
-                        [LoadingView hide];
-                        [self.collectionView reloadData];
-                    }
-                } error:^(NSString *errorMsg) {
-                    [LoadingView hide];
-                }];
-            }
-        } error:^(NSString *errorMsg) {
-            NSLog(0);
-        }];
-    }
+    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
