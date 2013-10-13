@@ -32,14 +32,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Sights";
+    self.title = @"What do you want to see?";
     
     self.lastLoadIndex = 0;
-    [[GeoCodeService sharedInstance]lookUpAddressFromCoordinate:[EyeEmNetworkService sharedInstance].currentLocation completion:^(NSString *location) {
-        self.title = location;
-    } error:^(NSString *errorMsg) {
-        
-    }];
+//    [[GeoCodeService sharedInstance]lookUpAddressFromCoordinate:[EyeEmNetworkService sharedInstance].currentLocation completion:^(NSString *location) {
+//        self.title = location;
+//    } error:^(NSString *errorMsg) {
+//        
+//    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -77,7 +77,7 @@
     label.text = @"";
     if(!isnan(photo.location.latitude)) {
         double distanceInM = [self distanceBetweenLocationOrigin:[EyeEmNetworkService sharedInstance].currentLocation andDestination:photo.location];
-        double calories = [self caloriesBurnedForDistance:distanceInM/1000];
+        double calories = 400+[self caloriesBurnedForDistance:distanceInM/1000];
         photo.distancdeInM = floor(distanceInM);
         
         label.hidden = NO;

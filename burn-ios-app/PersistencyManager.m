@@ -45,7 +45,7 @@
         //
         
         desserts = [NSMutableArray arrayWithArray:
-                 @[[[Meal alloc] initWithLabel:@"An eclair" imagePath:@"littleBite.jpg" highlightedImagePath:@"bite.jpg" calories:140],
+                 @[[[Meal alloc] initWithLabel:@"An eclair" imagePath:@"eclair.jpg" highlightedImagePath:@"bite.jpg" calories:140],
                    [[Meal alloc] initWithLabel:@"Frozen Yoghurt" imagePath:@"yog.jpg" highlightedImagePath:@"sushi.jpg" calories:65],
                    [[Meal alloc] initWithLabel:@"Gingerbread" imagePath:@"gingerbread2.jpg" highlightedImagePath:@"sushi.jpg" calories:95],
                    [[Meal alloc] initWithLabel:@"Chocolcate Cake" imagePath:@"chocCake.jpg" highlightedImagePath:@"sushi.jpg" calories:235],

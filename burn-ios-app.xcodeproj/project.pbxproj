@@ -86,6 +86,8 @@
 		70F470C9180A3A1A003B507C /* juice2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470C7180A3A1A003B507C /* juice2.jpg */; };
 		70F470CA180A3A1A003B507C /* juice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470C8180A3A1A003B507C /* juice.jpg */; };
 		70F470D2180AA425003B507C /* Temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F470D1180AA425003B507C /* Temp.storyboard */; };
+		70F470D4180AAFA7003B507C /* fb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470D3180AAFA7003B507C /* fb.jpg */; };
+		70F470D6180AB1C5003B507C /* facebook_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F470D5180AB1C5003B507C /* facebook_share.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +217,8 @@
 		70F470C7180A3A1A003B507C /* juice2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = juice2.jpg; sourceTree = "<group>"; };
 		70F470C8180A3A1A003B507C /* juice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = juice.jpg; sourceTree = "<group>"; };
 		70F470D1180AA425003B507C /* Temp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Temp.storyboard; sourceTree = "<group>"; };
+		70F470D3180AAFA7003B507C /* fb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fb.jpg; sourceTree = "<group>"; };
+		70F470D5180AB1C5003B507C /* facebook_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_share.png; sourceTree = "<group>"; };
 		7258041D3A8042738204AFC7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -405,6 +409,8 @@
 		08F9913C1809733A00F0B13A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70F470D5180AB1C5003B507C /* facebook_share.png */,
+				70F470D3180AAFA7003B507C /* fb.jpg */,
 				08F9913D1809733A00F0B13A /* burn-ios-app-Info.plist */,
 				08F9913E1809733A00F0B13A /* InfoPlist.strings */,
 				08F991411809733A00F0B13A /* main.m */,
@@ -538,6 +544,7 @@
 				70F470251809BB54003B507C /* InfoPlist.strings in Resources */,
 				083293A91809CBD80012C3A5 /* photo_2.jpeg in Resources */,
 				083293AC1809CBFF0012C3A5 /* photo_3.jpeg in Resources */,
+				70F470D6180AB1C5003B507C /* facebook_share.png in Resources */,
 				70F47074180A1F17003B507C /* wine.jpg in Resources */,
 				70F4706E180A1E7F003B507C /* pintOfBeer.jpg in Resources */,
 				0832940A180A92DE0012C3A5 /* workout_icon@2x.png in Resources */,
@@ -563,6 +570,7 @@
 				70F4708C180A2A23003B507C /* chocCake.jpg in Resources */,
 				08F991491809733A00F0B13A /* Main.storyboard in Resources */,
 				70F470241809BB54003B507C /* caesarSalad.jpg in Resources */,
+				70F470D4180AAFA7003B507C /* fb.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

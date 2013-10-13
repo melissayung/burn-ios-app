@@ -46,7 +46,7 @@ int counter;
     [pics addObject:[UIImage imageNamed:@"photo_4.jpeg"]];
 
 	// Do any additional setup after loading the view.
-    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(swapImage) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(swapImage) userInfo:nil repeats:NO];
 }
 
 - (void) swapImage
@@ -55,14 +55,14 @@ int counter;
     int index = counter % 4;
     UIImage *pic = pics[index];
     
-    [UIView transitionWithView:self.view duration:2 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+    [UIView transitionWithView:self.view duration:3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
         self.loginImaveView.image = pic;
     } completion:^(BOOL finished) {
         
     }];
     
 	// Do any additional setup after loading the view.
-    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(swapImage) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(swapImage) userInfo:nil repeats:NO];
 }
 
 - (void)didReceiveMemoryWarning

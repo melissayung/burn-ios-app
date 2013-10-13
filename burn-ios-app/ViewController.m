@@ -184,7 +184,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Calories";
+    self.title = @"What did you eat?";
+    totalCalories = 0;
     
     // 1
     self.view.backgroundColor = [UIColor blackColor];//colorWithRed:0.76f green:0.81f blue:0.87f alpha:1];
@@ -257,17 +258,18 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
     //100, 520, 100
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 520, 480, 50)];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 500, 480, 70)];
     [button setTitle:@"Let's go explore" forState:UIControlStateNormal];
-
+    button.titleLabel.font = [UIFont systemFontOfSize:20.0];
     [self.view addSubview:button];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button setBackgroundColor:[UIColor darkGrayColor]];
+    [button setTitleColor:[UIColor colorWithRed:30.0/255.0 green:204.0/255.0 blue:187.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor blackColor]];
     [button addTarget:self action:@selector(nextButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(NSInteger) addUpAllCaloriesToBurn {
     
+    totalCalories = 0;
     Meal *main = allMains[currentMainIndex];
     totalCalories += main.calories;
 
@@ -290,7 +292,7 @@
     PhotoGalleryViewController *viewCon = (PhotoGalleryViewController*)[StoryboardUtil loadViewControllerWithID:@"PhotoGallery"];
     
     
-        [[EyeEmNetworkService sharedInstance]fetchPhotosHavingCoordinates:[LocationManager sharedInstance].currentLocation.coordinate completion:^(NSArray *photos) {
+        [[EyeEmNetworkService sharedInstance]fetchPhotosHavingCoordinates:[EyeEmNetworkService sharedInstance].currentLocation completion:^(NSArray *photos) {
             
             viewCon.photos = photos;
             

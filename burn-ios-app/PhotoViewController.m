@@ -41,7 +41,7 @@
     
     [[GeoCodeService sharedInstance]lookUpAddressFromCoordinate:[EyeEmNetworkService sharedInstance].currentLocation completion:^(NSString *location) {
         self.infoLabel.hidden = NO;
-        self.infoLabel.text = [NSString stringWithFormat:@"%@\n(%d meters away)", location, self.photo.distancdeInM];
+        self.infoLabel.text = [NSString stringWithFormat:@"%@\n(%d m away)", location, self.photo.distancdeInM];
     } error:^(NSString *errorMsg) {
         
     }];
