@@ -38,6 +38,7 @@
 		083293C21809FFF70012C3A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083293C11809FFF70012C3A5 /* QuartzCore.framework */; };
 		083293C5180A045E0012C3A5 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 083293C4180A045E0012C3A5 /* MapViewController.m */; };
 		083293C7180A05300012C3A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083293C6180A05300012C3A5 /* MapKit.framework */; };
+		08329406180A922E0012C3A5 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 08329405180A922E0012C3A5 /* LocationManager.m */; };
 		08F991361809733A00F0B13A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991351809733A00F0B13A /* Foundation.framework */; };
 		08F991381809733A00F0B13A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991371809733A00F0B13A /* CoreGraphics.framework */; };
 		08F9913A1809733A00F0B13A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991391809733A00F0B13A /* UIKit.framework */; };
@@ -146,6 +147,8 @@
 		083293C3180A045E0012C3A5 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		083293C4180A045E0012C3A5 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		083293C6180A05300012C3A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		08329404180A922E0012C3A5 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		08329405180A922E0012C3A5 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		08F991321809733A00F0B13A /* burn-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "burn-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F991351809733A00F0B13A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08F991371809733A00F0B13A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -309,6 +312,8 @@
 		08F9913B1809733A00F0B13A /* burn-ios-app */ = {
 			isa = PBXGroup;
 			children = (
+				08329404180A922E0012C3A5 /* LocationManager.h */,
+				08329405180A922E0012C3A5 /* LocationManager.m */,
 				083293B91809D3750012C3A5 /* Images.xcassets */,
 				083293A61809CBCC0012C3A5 /* Images */,
 				083293831809BD1B0012C3A5 /* AFNetworking */,
@@ -596,6 +601,7 @@
 				0832932B180993DA0012C3A5 /* StoryboardUtil.m in Sources */,
 				0832939E1809BD1B0012C3A5 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				0832939D1809BD1B0012C3A5 /* AFJSONUtilities.m in Sources */,
+				08329406180A922E0012C3A5 /* LocationManager.m in Sources */,
 				70F470291809BB54003B507C /* Meal.m in Sources */,
 				0832939F1809BD1B0012C3A5 /* AFPropertyListRequestOperation.m in Sources */,
 				08329324180992C90012C3A5 /* PhotoGalleryViewController.m in Sources */,
