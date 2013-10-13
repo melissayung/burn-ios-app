@@ -28,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Map";
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Photo" style:UIBarButtonItemStyleBordered target:self action:@selector(showPhotoView)];
     
     MKCoordinateRegion region;

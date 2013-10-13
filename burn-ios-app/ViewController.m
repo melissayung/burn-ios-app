@@ -172,6 +172,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Calories";
+    
     // 1
     self.view.backgroundColor = [UIColor blackColor];//colorWithRed:0.76f green:0.81f blue:0.87f alpha:1];
     currentMainIndex = 0;

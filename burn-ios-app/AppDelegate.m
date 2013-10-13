@@ -10,6 +10,7 @@
 #import "StoryboardUtil.h"
 #import "ViewController.h"
 #import "EyeEmNetworkService.h"
+#import "LocationManager.h"
 
 @interface AppDelegate()
 
@@ -22,6 +23,7 @@
     if([[EyeEmNetworkService sharedInstance]isAuthenticated]) {
         [self showFoodControllerView];
     }
+    [[LocationManager sharedInstance]startUpdatingLocation];
     return YES;
 }
 							
@@ -56,6 +58,7 @@
     ViewController *viewCon = [[ViewController alloc]init];
     UINavigationController *navCon = [[UINavigationController alloc]initWithRootViewController:viewCon];
     self.window.rootViewController = navCon;
+    [self.window makeKeyAndVisible];
 }
 
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {

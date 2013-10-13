@@ -12,6 +12,7 @@
 #import "LoadingView.h"
 #import "EyeEmNetworkService.h"
 #import "GeoCodeService.h"
+#import "LocationManager.h"
 
 @interface PhotoGalleryViewController ()
 @property NSInteger lastLoadIndex;
@@ -31,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Sights";
+    
     self.lastLoadIndex = 0;
     [[GeoCodeService sharedInstance]lookUpAddressFromCoordinate:[EyeEmNetworkService sharedInstance].currentLocation completion:^(NSString *location) {
         self.title = location;
@@ -44,7 +47,7 @@
     
     if(!self.photos) {
         [LoadingView show];
-        [[EyeEmNetworkService sharedInstance]fetchPhotosHavingCoordinates:CLLocationCoordinate2DMake(0, 0) completion:^(NSArray *photos) {
+        [[EyeEmNetworkService sharedInstance]fetchPhotosHavingCoordinates:[LocationManager sharedInstance].currentLocation.coordinate completion:^(NSArray *photos) {
             
             self.photos = photos;
             
@@ -61,7 +64,7 @@
                         [self.collectionView reloadData];
                     }
                 } error:^(NSString *errorMsg) {
-                    
+                    [LoadingView hide];
                 }];
             }
         } error:^(NSString *errorMsg) {
