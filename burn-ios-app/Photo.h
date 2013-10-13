@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *photoURL;
 @property (nonatomic, strong) NSString *photoID;
 @property CLLocationCoordinate2D location;
+@property int distancdeInM;
 @end
 
 /**

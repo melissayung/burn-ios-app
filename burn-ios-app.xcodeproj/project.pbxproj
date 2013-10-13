@@ -38,6 +38,12 @@
 		083293C21809FFF70012C3A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083293C11809FFF70012C3A5 /* QuartzCore.framework */; };
 		083293C5180A045E0012C3A5 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 083293C4180A045E0012C3A5 /* MapViewController.m */; };
 		083293C7180A05300012C3A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083293C6180A05300012C3A5 /* MapKit.framework */; };
+		08329406180A922E0012C3A5 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 08329405180A922E0012C3A5 /* LocationManager.m */; };
+		08329409180A92DE0012C3A5 /* workout_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 08329407180A92DE0012C3A5 /* workout_icon.png */; };
+		0832940A180A92DE0012C3A5 /* workout_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08329408180A92DE0012C3A5 /* workout_icon@2x.png */; };
+		0832940C180A930A0012C3A5 /* sushi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0832940B180A930A0012C3A5 /* sushi.jpg */; };
+		0832940E180A991B0012C3A5 /* coffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0832940D180A991B0012C3A5 /* coffee.jpg */; };
+		08329410180AA14B0012C3A5 /* share-on-facebook-button.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0832940F180AA14B0012C3A5 /* share-on-facebook-button.gif */; };
 		08F991361809733A00F0B13A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991351809733A00F0B13A /* Foundation.framework */; };
 		08F991381809733A00F0B13A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991371809733A00F0B13A /* CoreGraphics.framework */; };
 		08F9913A1809733A00F0B13A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F991391809733A00F0B13A /* UIKit.framework */; };
@@ -79,7 +85,7 @@
 		70F470C2180A379F003B507C /* coke2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470C0180A379F003B507C /* coke2.jpg */; };
 		70F470C9180A3A1A003B507C /* juice2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470C7180A3A1A003B507C /* juice2.jpg */; };
 		70F470CA180A3A1A003B507C /* juice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470C8180A3A1A003B507C /* juice.jpg */; };
-		70F470D0180AA188003B507C /* littleBite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470CF180AA188003B507C /* littleBite.jpg */; };
+		70F470D2180AA425003B507C /* Temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F470D1180AA425003B507C /* Temp.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +153,13 @@
 		083293C3180A045E0012C3A5 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		083293C4180A045E0012C3A5 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		083293C6180A05300012C3A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		08329404180A922E0012C3A5 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		08329405180A922E0012C3A5 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		08329407180A92DE0012C3A5 /* workout_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = workout_icon.png; sourceTree = "<group>"; };
+		08329408180A92DE0012C3A5 /* workout_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "workout_icon@2x.png"; sourceTree = "<group>"; };
+		0832940B180A930A0012C3A5 /* sushi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sushi.jpg; sourceTree = "<group>"; };
+		0832940D180A991B0012C3A5 /* coffee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffee.jpg; sourceTree = "<group>"; };
+		0832940F180AA14B0012C3A5 /* share-on-facebook-button.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "share-on-facebook-button.gif"; sourceTree = "<group>"; };
 		08F991321809733A00F0B13A /* burn-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "burn-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F991351809733A00F0B13A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08F991371809733A00F0B13A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -201,7 +214,7 @@
 		70F470C0180A379F003B507C /* coke2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coke2.jpg; sourceTree = "<group>"; };
 		70F470C7180A3A1A003B507C /* juice2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = juice2.jpg; sourceTree = "<group>"; };
 		70F470C8180A3A1A003B507C /* juice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = juice.jpg; sourceTree = "<group>"; };
-		70F470CF180AA188003B507C /* littleBite.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = littleBite.jpg; sourceTree = "<group>"; };
+		70F470D1180AA425003B507C /* Temp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Temp.storyboard; sourceTree = "<group>"; };
 		7258041D3A8042738204AFC7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -263,12 +276,36 @@
 		083293A61809CBCC0012C3A5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0832940F180AA14B0012C3A5 /* share-on-facebook-button.gif */,
+				0832940D180A991B0012C3A5 /* coffee.jpg */,
+				0832940B180A930A0012C3A5 /* sushi.jpg */,
+				08329407180A92DE0012C3A5 /* workout_icon.png */,
+				08329408180A92DE0012C3A5 /* workout_icon@2x.png */,
 				70F4700F1809BB54003B507C /* caesarSalad.jpg */,
 				083293AF1809CE6E0012C3A5 /* eyeem_logo.png */,
 				083293AD1809CD7D0012C3A5 /* photo_4.jpeg */,
 				083293AB1809CBFF0012C3A5 /* photo_3.jpeg */,
 				083293A71809CBD80012C3A5 /* photo_2.jpeg */,
 				083293A81809CBD80012C3A5 /* photo_1.jpeg */,
+				70F470C7180A3A1A003B507C /* juice2.jpg */,
+				70F470C8180A3A1A003B507C /* juice.jpg */,
+				70F470C0180A379F003B507C /* coke2.jpg */,
+				70F470B9180A3529003B507C /* gingerbread2.jpg */,
+				70F470AD180A3245003B507C /* dnut.jpg */,
+				70F470A7180A315B003B507C /* eclair.jpg */,
+				70F4709D180A2F40003B507C /* icetea.jpg */,
+				70F4709B180A2E31003B507C /* oj.jpg */,
+				70F47093180A2C2A003B507C /* yog.jpg */,
+				70F4708B180A2A23003B507C /* chocCake.jpg */,
+				70F47089180A2974003B507C /* macarons.jpg */,
+				70F47079180A1F9B003B507C /* doughnut.jpg */,
+				70F47073180A1F17003B507C /* wine.jpg */,
+				70F4706D180A1E7F003B507C /* pintOfBeer.jpg */,
+				70F4705F180A1CBD003B507C /* redWine.jpg */,
+				70F4701F1809BB54003B507C /* pizzaSlice.jpg */,
+				70F470201809BB54003B507C /* sandwich.jpg */,
+				70F470211809BB54003B507C /* soup.jpg */,
+				70F4701C1809BB54003B507C /* pasta.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -311,6 +348,8 @@
 		08F9913B1809733A00F0B13A /* burn-ios-app */ = {
 			isa = PBXGroup;
 			children = (
+				08329404180A922E0012C3A5 /* LocationManager.h */,
+				08329405180A922E0012C3A5 /* LocationManager.m */,
 				083293B91809D3750012C3A5 /* Images.xcassets */,
 				083293A61809CBCC0012C3A5 /* Images */,
 				083293831809BD1B0012C3A5 /* AFNetworking */,
@@ -358,6 +397,7 @@
 				083293BF1809E6090012C3A5 /* GeoCodeService.m */,
 				083293C3180A045E0012C3A5 /* MapViewController.h */,
 				083293C4180A045E0012C3A5 /* MapViewController.m */,
+				70F470D1180AA425003B507C /* Temp.storyboard */,
 			);
 			path = "burn-ios-app";
 			sourceTree = "<group>";
@@ -365,26 +405,6 @@
 		08F9913C1809733A00F0B13A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				70F470CF180AA188003B507C /* littleBite.jpg */,
-				70F470C7180A3A1A003B507C /* juice2.jpg */,
-				70F470C8180A3A1A003B507C /* juice.jpg */,
-				70F470C0180A379F003B507C /* coke2.jpg */,
-				70F470B9180A3529003B507C /* gingerbread2.jpg */,
-				70F470AD180A3245003B507C /* dnut.jpg */,
-				70F470A7180A315B003B507C /* eclair.jpg */,
-				70F4709D180A2F40003B507C /* icetea.jpg */,
-				70F4709B180A2E31003B507C /* oj.jpg */,
-				70F47093180A2C2A003B507C /* yog.jpg */,
-				70F4708B180A2A23003B507C /* chocCake.jpg */,
-				70F47089180A2974003B507C /* macarons.jpg */,
-				70F47079180A1F9B003B507C /* doughnut.jpg */,
-				70F47073180A1F17003B507C /* wine.jpg */,
-				70F4706D180A1E7F003B507C /* pintOfBeer.jpg */,
-				70F4705F180A1CBD003B507C /* redWine.jpg */,
-				70F4701F1809BB54003B507C /* pizzaSlice.jpg */,
-				70F470201809BB54003B507C /* sandwich.jpg */,
-				70F470211809BB54003B507C /* soup.jpg */,
-				70F4701C1809BB54003B507C /* pasta.jpg */,
 				08F9913D1809733A00F0B13A /* burn-ios-app-Info.plist */,
 				08F9913E1809733A00F0B13A /* InfoPlist.strings */,
 				08F991411809733A00F0B13A /* main.m */,
@@ -506,34 +526,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0832940E180A991B0012C3A5 /* coffee.jpg in Resources */,
 				70F4702E1809BB54003B507C /* sandwich.jpg in Resources */,
 				70F47060180A1CBD003B507C /* redWine.jpg in Resources */,
 				083293BA1809D3750012C3A5 /* Images.xcassets in Resources */,
 				70F4708A180A2974003B507C /* macarons.jpg in Resources */,
 				70F47094180A2C2A003B507C /* yog.jpg in Resources */,
 				70F4702D1809BB54003B507C /* pizzaSlice.jpg in Resources */,
+				08329409180A92DE0012C3A5 /* workout_icon.png in Resources */,
 				083293AA1809CBD80012C3A5 /* photo_1.jpeg in Resources */,
 				70F470251809BB54003B507C /* InfoPlist.strings in Resources */,
 				083293A91809CBD80012C3A5 /* photo_2.jpeg in Resources */,
 				083293AC1809CBFF0012C3A5 /* photo_3.jpeg in Resources */,
 				70F47074180A1F17003B507C /* wine.jpg in Resources */,
 				70F4706E180A1E7F003B507C /* pintOfBeer.jpg in Resources */,
+				0832940A180A92DE0012C3A5 /* workout_icon@2x.png in Resources */,
 				70F470C2180A379F003B507C /* coke2.jpg in Resources */,
 				70F4702F1809BB54003B507C /* soup.jpg in Resources */,
 				70F4707A180A1F9B003B507C /* doughnut.jpg in Resources */,
-				70F470D0180AA188003B507C /* littleBite.jpg in Resources */,
 				083293B01809CE6E0012C3A5 /* eyeem_logo.png in Resources */,
 				70F470221809BB54003B507C /* Main.storyboard in Resources */,
 				70F470AA180A315B003B507C /* eclair.jpg in Resources */,
 				70F4709C180A2E31003B507C /* oj.jpg in Resources */,
 				70F470AE180A3245003B507C /* dnut.jpg in Resources */,
+				0832940C180A930A0012C3A5 /* sushi.jpg in Resources */,
 				70F470CA180A3A1A003B507C /* juice.jpg in Resources */,
+				08329410180AA14B0012C3A5 /* share-on-facebook-button.gif in Resources */,
 				0832932F180997BB0012C3A5 /* LoadingView.xib in Resources */,
 				70F4709F180A2F40003B507C /* icetea.jpg in Resources */,
 				70F4702B1809BB54003B507C /* pasta.jpg in Resources */,
 				70F470BC180A3529003B507C /* gingerbread2.jpg in Resources */,
 				08F991401809733A00F0B13A /* InfoPlist.strings in Resources */,
 				083293AE1809CD7D0012C3A5 /* photo_4.jpeg in Resources */,
+				70F470D2180AA425003B507C /* Temp.storyboard in Resources */,
 				70F470C9180A3A1A003B507C /* juice2.jpg in Resources */,
 				70F4708C180A2A23003B507C /* chocCake.jpg in Resources */,
 				08F991491809733A00F0B13A /* Main.storyboard in Resources */,
@@ -600,6 +625,7 @@
 				0832932B180993DA0012C3A5 /* StoryboardUtil.m in Sources */,
 				0832939E1809BD1B0012C3A5 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				0832939D1809BD1B0012C3A5 /* AFJSONUtilities.m in Sources */,
+				08329406180A922E0012C3A5 /* LocationManager.m in Sources */,
 				70F470291809BB54003B507C /* Meal.m in Sources */,
 				0832939F1809BD1B0012C3A5 /* AFPropertyListRequestOperation.m in Sources */,
 				08329324180992C90012C3A5 /* PhotoGalleryViewController.m in Sources */,

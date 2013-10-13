@@ -35,12 +35,13 @@
 {
     [super viewDidLoad];
     [self.imageView setImageWithURL:[NSURL URLWithString:self.photo.photoURL]];
-    self.infoLabel.text = @"";
+    self.infoLabel.hidden = YES;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Map" style:UIBarButtonItemStyleBordered target:self action:@selector(showMap)];
     
     [[GeoCodeService sharedInstance]lookUpAddressFromCoordinate:[EyeEmNetworkService sharedInstance].currentLocation completion:^(NSString *location) {
-        self.infoLabel.text = location;
+        self.infoLabel.hidden = NO;
+        self.infoLabel.text = [NSString stringWithFormat:@"%@\n(%d meters away)", location, self.photo.distancdeInM];
     } error:^(NSString *errorMsg) {
         
     }];

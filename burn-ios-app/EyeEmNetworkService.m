@@ -44,6 +44,7 @@ JTSYNTHESIZE_SINGLETON_FOR_CLASS(EyeEmNetworkService)
 - (void)setApiCode:(NSString *)apiCode {
     _apiCode = apiCode;
     [[NSUserDefaults standardUserDefaults]setObject:_apiCode forKey:kAPIKey];
+    [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
 - (void)fetchPhotosDetails:(NSArray*)photos completion:(void (^)(void))completionBlock error:(void (^)(NSString *errorMsg))errorBlock {
@@ -95,7 +96,7 @@ https://www.eyeem.com/api/v2/albums?geoSearch=nearbyVenues&lat=52.50094140368&ln
  **/
 - (void)fetchPhotosHavingCoordinates:(CLLocationCoordinate2D)coordinates completion:(void (^)(NSArray *photos))completionBlock error:(void (^)(NSString *errorMsg))errorBlock {
     
-    NSURLRequest *request = [self.httpClient requestWithMethod:@"GET" path:@"/api/v2/albums" parameters:@{@"geoSearch" : @"nearbyVenues", @"lat" : @(self.currentLocation.latitude), @"lng" : @(self.currentLocation.longitude), @"type" : @"venue", @"access_token" : self.accessToken}];
+    NSURLRequest *request = [self.httpClient requestWithMethod:@"GET" path:@"/api/v2/albums" parameters:@{@"geoSearch" : @"nearbyVenues", @"lat" : @(coordinates.latitude), @"lng" : @(coordinates.longitude), @"type" : @"venue", @"access_token" : self.accessToken}];
     
     AFJSONRequestOperation *op = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSDictionary *albums = [JSON objectForKey:@"albums"];
@@ -136,6 +137,7 @@ https://www.eyeem.com/api/v2/albums?geoSearch=nearbyVenues&lat=52.50094140368&ln
         // TODO keep track of expiry?
         self.accessToken = [JSON objectForKey:@"access_token"];
         [[NSUserDefaults standardUserDefaults]setObject:self.accessToken forKey:kAccessTokenKey];
+        [[NSUserDefaults standardUserDefaults]synchronize];
         
         completionBlock();
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
