@@ -11,7 +11,7 @@
 @implementation Meal (TableRepresentation)
 - (NSDictionary*)tr_mainTableRepresentation
 {
-    return @{@"titles":@[@"Main"],
+    return @{@"titles":@[@"Food"],
              @"values":@[self.label]};
 }
 

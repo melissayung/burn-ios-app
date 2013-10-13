@@ -8,9 +8,9 @@
 
 #import "HorizontalScroller.h"
 // 1
-#define VIEW_PADDING 10
-#define VIEW_DIMENSIONS 100
-#define VIEWS_OFFSET 100
+#define VIEW_PADDING 7
+#define VIEW_DIMENSIONS 90
+#define VIEWS_OFFSET 0
 
 // 2
 @interface HorizontalScroller () <UIScrollViewDelegate>
@@ -30,7 +30,7 @@
         scroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         scroller.delegate = self;
         [self addSubview:scroller];
-        UILongPressGestureRecognizer *longpressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(scrollerSelected:)];
+        //UILongPressGestureRecognizer *longpressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(scrollerSelected:)];
         
         UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollerTapped:)];
         [scroller addGestureRecognizer:tapRecognizer];

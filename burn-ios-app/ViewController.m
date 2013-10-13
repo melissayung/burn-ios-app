@@ -36,7 +36,7 @@
     HorizontalScroller *dessertsScroller;
     
     
-    int totalCalories; // prob should move somewhere else
+    int totalCalories; // we add it all up on Next button pressed
 }
 @end
 
@@ -62,7 +62,7 @@
     }
 }
 
-
+// can't get this to work
 - (void)horizontalScroller:(HorizontalScroller*)scroller selectedViewAtIndex:(int)index
 {
     if (scroller == mainScroller)
@@ -98,7 +98,7 @@
     {
         return allDesserts.count;
     }
-    return nil;
+    return 0;
 }
 
 - (UIView*)horizontalScroller:(HorizontalScroller*)scroller viewAtIndex:(int)index
@@ -166,7 +166,7 @@
     {
         return currentDessertIndex;
     }
-    return nil;
+    return 0;
 }
 
 - (void)viewDidLoad
@@ -176,6 +176,7 @@
     self.view.backgroundColor = [UIColor blackColor];//colorWithRed:0.76f green:0.81f blue:0.87f alpha:1];
     currentMainIndex = 0;
     currentDrinkIndex = 0;
+    currentDessertIndex = 0;
     
     //2
     allMains = [[LibraryAPI sharedInstance] getMains];
@@ -186,7 +187,7 @@
     
     // 3
     // the uitableview that presents the mains data
-    mainsDataTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 10, self.view.frame.size.width, self.view.frame.size.height-120) style:UITableViewStyleGrouped];
+    mainsDataTable = [[UITableView alloc] initWithFrame:CGRectMake(0, -40, self.view.frame.size.width, self.view.frame.size.height-120) style:UITableViewStyleGrouped];
     mainsDataTable.delegate = self;
     mainsDataTable.dataSource = self;
     mainsDataTable.backgroundView = nil;
@@ -201,7 +202,7 @@
     
     
     // the uitableview that presents the desserts data
-    dessertsDataTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 350, self.view.frame.size.width, self.view.frame.size.height-120) style:UITableViewStyleGrouped];
+    dessertsDataTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 330, self.view.frame.size.width, self.view.frame.size.height-120) style:UITableViewStyleGrouped];
     dessertsDataTable.delegate = self;
     dessertsDataTable.dataSource = self;
     dessertsDataTable.backgroundView = nil;
@@ -209,7 +210,7 @@
     
     [self loadPreviousState];
     
-    mainScroller = [[HorizontalScroller alloc] initWithFrame:CGRectMake(0, 80, self.view.frame.size.width, 120)];
+    mainScroller = [[HorizontalScroller alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 120)];
     mainScroller.backgroundColor = [UIColor blackColor];//colorWithRed:0.24f green:0.35f blue:0.49f alpha:1];
     mainScroller.delegate = self;
     [self.view addSubview:mainScroller];
@@ -231,7 +232,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
     
-    dessertsScroller = [[HorizontalScroller alloc] initWithFrame:CGRectMake(0, 420, self.view.frame.size.width, 120)];
+    dessertsScroller = [[HorizontalScroller alloc] initWithFrame:CGRectMake(0, 400, self.view.frame.size.width, 120)];
     dessertsScroller.backgroundColor = [UIColor blackColor];//colorWithRed:0.24f green:0.35f blue:0.49f alpha:1];
     dessertsScroller.delegate = self;
     [self.view addSubview:dessertsScroller];
@@ -241,15 +242,34 @@
     [self showDataForDessertAtIndex:currentDessertIndex];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(320-100, 400, 100, 50)];
-    [button setTitle:@"Next" forState:UIControlStateNormal];
+    //220, 400
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 520, 100, 50)];
+    [button setTitle:@"Burn" forState:UIControlStateNormal];
 
     [self.view addSubview:button];
     [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(nextButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+-(NSInteger) addUpAllCaloriesToBurn {
+    
+    Meal *main = allMains[currentMainIndex];
+    totalCalories += main.calories;
+
+    Meal *drink = allDrinks[currentDrinkIndex];
+    totalCalories += drink.calories;
+
+    Meal *dessert = allDesserts[currentDessertIndex];
+    totalCalories += dessert.calories;
+
+    NSLog(@"Total calories: %i", totalCalories);
+
+    return totalCalories;
+}
+
 - (void)nextButtonPressed:(id)sender {
+    // now is a good time to calculate addUpAllCaloriesToBurn;
+
     PhotoGalleryViewController *viewCon = (PhotoGalleryViewController*)[StoryboardUtil loadViewControllerWithID:@"PhotoGallery"];
     [self.navigationController pushViewController:viewCon animated:YES];
 }

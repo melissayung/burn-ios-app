@@ -58,12 +58,27 @@
 		70F470281809BB54003B507C /* LibraryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F470171809BB54003B507C /* LibraryAPI.m */; };
 		70F470291809BB54003B507C /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F470191809BB54003B507C /* Meal.m */; };
 		70F4702A1809BB54003B507C /* MealAlbumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F4701B1809BB54003B507C /* MealAlbumView.m */; };
-		70F4702B1809BB54003B507C /* pasta.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 70F4701C1809BB54003B507C /* pasta.jpeg */; };
+		70F4702B1809BB54003B507C /* pasta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F4701C1809BB54003B507C /* pasta.jpg */; };
 		70F4702C1809BB54003B507C /* PersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F4701E1809BB54003B507C /* PersistencyManager.m */; };
 		70F4702D1809BB54003B507C /* pizzaSlice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F4701F1809BB54003B507C /* pizzaSlice.jpg */; };
 		70F4702E1809BB54003B507C /* sandwich.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470201809BB54003B507C /* sandwich.jpg */; };
 		70F4702F1809BB54003B507C /* soup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470211809BB54003B507C /* soup.jpg */; };
 		70F470321809BBB4003B507C /* Meal+TableRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F470311809BBB4003B507C /* Meal+TableRepresentation.m */; };
+		70F47060180A1CBD003B507C /* redWine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F4705F180A1CBD003B507C /* redWine.jpg */; };
+		70F4706E180A1E7F003B507C /* pintOfBeer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F4706D180A1E7F003B507C /* pintOfBeer.jpg */; };
+		70F47074180A1F17003B507C /* wine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F47073180A1F17003B507C /* wine.jpg */; };
+		70F4707A180A1F9B003B507C /* doughnut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F47079180A1F9B003B507C /* doughnut.jpg */; };
+		70F4708A180A2974003B507C /* macarons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F47089180A2974003B507C /* macarons.jpg */; };
+		70F4708C180A2A23003B507C /* chocCake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F4708B180A2A23003B507C /* chocCake.jpg */; };
+		70F47094180A2C2A003B507C /* yog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F47093180A2C2A003B507C /* yog.jpg */; };
+		70F4709C180A2E31003B507C /* oj.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F4709B180A2E31003B507C /* oj.jpg */; };
+		70F4709F180A2F40003B507C /* icetea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F4709D180A2F40003B507C /* icetea.jpg */; };
+		70F470AA180A315B003B507C /* eclair.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470A7180A315B003B507C /* eclair.jpg */; };
+		70F470AE180A3245003B507C /* dnut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470AD180A3245003B507C /* dnut.jpg */; };
+		70F470BC180A3529003B507C /* gingerbread2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470B9180A3529003B507C /* gingerbread2.jpg */; };
+		70F470C2180A379F003B507C /* coke2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470C0180A379F003B507C /* coke2.jpg */; };
+		70F470C9180A3A1A003B507C /* juice2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470C7180A3A1A003B507C /* juice2.jpg */; };
+		70F470CA180A3A1A003B507C /* juice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70F470C8180A3A1A003B507C /* juice.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,7 +177,7 @@
 		70F470191809BB54003B507C /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meal.m; sourceTree = "<group>"; };
 		70F4701A1809BB54003B507C /* MealAlbumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealAlbumView.h; sourceTree = "<group>"; };
 		70F4701B1809BB54003B507C /* MealAlbumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealAlbumView.m; sourceTree = "<group>"; };
-		70F4701C1809BB54003B507C /* pasta.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pasta.jpeg; sourceTree = "<group>"; };
+		70F4701C1809BB54003B507C /* pasta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pasta.jpg; sourceTree = "<group>"; };
 		70F4701D1809BB54003B507C /* PersistencyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistencyManager.h; sourceTree = "<group>"; };
 		70F4701E1809BB54003B507C /* PersistencyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistencyManager.m; sourceTree = "<group>"; };
 		70F4701F1809BB54003B507C /* pizzaSlice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizzaSlice.jpg; sourceTree = "<group>"; };
@@ -170,6 +185,21 @@
 		70F470211809BB54003B507C /* soup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soup.jpg; sourceTree = "<group>"; };
 		70F470301809BBB4003B507C /* Meal+TableRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Meal+TableRepresentation.h"; sourceTree = "<group>"; };
 		70F470311809BBB4003B507C /* Meal+TableRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Meal+TableRepresentation.m"; sourceTree = "<group>"; };
+		70F4705F180A1CBD003B507C /* redWine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = redWine.jpg; sourceTree = "<group>"; };
+		70F4706D180A1E7F003B507C /* pintOfBeer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pintOfBeer.jpg; sourceTree = "<group>"; };
+		70F47073180A1F17003B507C /* wine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wine.jpg; sourceTree = "<group>"; };
+		70F47079180A1F9B003B507C /* doughnut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doughnut.jpg; sourceTree = "<group>"; };
+		70F47089180A2974003B507C /* macarons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = macarons.jpg; sourceTree = "<group>"; };
+		70F4708B180A2A23003B507C /* chocCake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chocCake.jpg; sourceTree = "<group>"; };
+		70F47093180A2C2A003B507C /* yog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yog.jpg; sourceTree = "<group>"; };
+		70F4709B180A2E31003B507C /* oj.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oj.jpg; sourceTree = "<group>"; };
+		70F4709D180A2F40003B507C /* icetea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icetea.jpg; sourceTree = "<group>"; };
+		70F470A7180A315B003B507C /* eclair.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eclair.jpg; sourceTree = "<group>"; };
+		70F470AD180A3245003B507C /* dnut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dnut.jpg; sourceTree = "<group>"; };
+		70F470B9180A3529003B507C /* gingerbread2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gingerbread2.jpg; sourceTree = "<group>"; };
+		70F470C0180A379F003B507C /* coke2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coke2.jpg; sourceTree = "<group>"; };
+		70F470C7180A3A1A003B507C /* juice2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = juice2.jpg; sourceTree = "<group>"; };
+		70F470C8180A3A1A003B507C /* juice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = juice.jpg; sourceTree = "<group>"; };
 		7258041D3A8042738204AFC7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -296,12 +326,8 @@
 				70F470191809BB54003B507C /* Meal.m */,
 				70F4701A1809BB54003B507C /* MealAlbumView.h */,
 				70F4701B1809BB54003B507C /* MealAlbumView.m */,
-				70F4701C1809BB54003B507C /* pasta.jpeg */,
 				70F4701D1809BB54003B507C /* PersistencyManager.h */,
 				70F4701E1809BB54003B507C /* PersistencyManager.m */,
-				70F4701F1809BB54003B507C /* pizzaSlice.jpg */,
-				70F470201809BB54003B507C /* sandwich.jpg */,
-				70F470211809BB54003B507C /* soup.jpg */,
 				0832932C180997BA0012C3A5 /* LoadingView.h */,
 				0832932D180997BA0012C3A5 /* LoadingView.xib */,
 				0832932E180997BB0012C3A5 /* LoadingView.m */,
@@ -337,6 +363,25 @@
 		08F9913C1809733A00F0B13A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70F470C7180A3A1A003B507C /* juice2.jpg */,
+				70F470C8180A3A1A003B507C /* juice.jpg */,
+				70F470C0180A379F003B507C /* coke2.jpg */,
+				70F470B9180A3529003B507C /* gingerbread2.jpg */,
+				70F470AD180A3245003B507C /* dnut.jpg */,
+				70F470A7180A315B003B507C /* eclair.jpg */,
+				70F4709D180A2F40003B507C /* icetea.jpg */,
+				70F4709B180A2E31003B507C /* oj.jpg */,
+				70F47093180A2C2A003B507C /* yog.jpg */,
+				70F4708B180A2A23003B507C /* chocCake.jpg */,
+				70F47089180A2974003B507C /* macarons.jpg */,
+				70F47079180A1F9B003B507C /* doughnut.jpg */,
+				70F47073180A1F17003B507C /* wine.jpg */,
+				70F4706D180A1E7F003B507C /* pintOfBeer.jpg */,
+				70F4705F180A1CBD003B507C /* redWine.jpg */,
+				70F4701F1809BB54003B507C /* pizzaSlice.jpg */,
+				70F470201809BB54003B507C /* sandwich.jpg */,
+				70F470211809BB54003B507C /* soup.jpg */,
+				70F4701C1809BB54003B507C /* pasta.jpg */,
 				08F9913D1809733A00F0B13A /* burn-ios-app-Info.plist */,
 				08F9913E1809733A00F0B13A /* InfoPlist.strings */,
 				08F991411809733A00F0B13A /* main.m */,
@@ -459,19 +504,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				70F4702E1809BB54003B507C /* sandwich.jpg in Resources */,
+				70F47060180A1CBD003B507C /* redWine.jpg in Resources */,
 				083293BA1809D3750012C3A5 /* Images.xcassets in Resources */,
+				70F4708A180A2974003B507C /* macarons.jpg in Resources */,
+				70F47094180A2C2A003B507C /* yog.jpg in Resources */,
 				70F4702D1809BB54003B507C /* pizzaSlice.jpg in Resources */,
 				083293AA1809CBD80012C3A5 /* photo_1.jpeg in Resources */,
 				70F470251809BB54003B507C /* InfoPlist.strings in Resources */,
 				083293A91809CBD80012C3A5 /* photo_2.jpeg in Resources */,
 				083293AC1809CBFF0012C3A5 /* photo_3.jpeg in Resources */,
+				70F47074180A1F17003B507C /* wine.jpg in Resources */,
+				70F4706E180A1E7F003B507C /* pintOfBeer.jpg in Resources */,
+				70F470C2180A379F003B507C /* coke2.jpg in Resources */,
 				70F4702F1809BB54003B507C /* soup.jpg in Resources */,
+				70F4707A180A1F9B003B507C /* doughnut.jpg in Resources */,
 				083293B01809CE6E0012C3A5 /* eyeem_logo.png in Resources */,
 				70F470221809BB54003B507C /* Main.storyboard in Resources */,
+				70F470AA180A315B003B507C /* eclair.jpg in Resources */,
+				70F4709C180A2E31003B507C /* oj.jpg in Resources */,
+				70F470AE180A3245003B507C /* dnut.jpg in Resources */,
+				70F470CA180A3A1A003B507C /* juice.jpg in Resources */,
 				0832932F180997BB0012C3A5 /* LoadingView.xib in Resources */,
-				70F4702B1809BB54003B507C /* pasta.jpeg in Resources */,
+				70F4709F180A2F40003B507C /* icetea.jpg in Resources */,
+				70F4702B1809BB54003B507C /* pasta.jpg in Resources */,
+				70F470BC180A3529003B507C /* gingerbread2.jpg in Resources */,
 				08F991401809733A00F0B13A /* InfoPlist.strings in Resources */,
 				083293AE1809CD7D0012C3A5 /* photo_4.jpeg in Resources */,
+				70F470C9180A3A1A003B507C /* juice2.jpg in Resources */,
+				70F4708C180A2A23003B507C /* chocCake.jpg in Resources */,
 				08F991491809733A00F0B13A /* Main.storyboard in Resources */,
 				70F470241809BB54003B507C /* caesarSalad.jpg in Resources */,
 			);
