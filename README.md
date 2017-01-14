@@ -1,5 +1,5 @@
 # Move (formerly known as Burn)
-Born out of the Coca-Cola hackathon project, Move is an iOS app that focuses on health and well-being.
+Born out of the Coca-Cola hackathon over 24 hours, Move is an iOS app that focuses on health and well-being.
 
 Features
 - Meals screen for user input.
